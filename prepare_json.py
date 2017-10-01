@@ -15,16 +15,18 @@ JSON_DATA = []
 def prepare_element(element):
     """ Convert OSM element to JSON """
     if element.tag == "node" or element.tag == "way" or element.tag == "relation":
+        #Common data convertion
         node = {}
         node['id'] = int(element.attrib['id'])
         node['type'] = element.tag
         node['created'] = get_creation_information(element)
+        #Specific data convertion
         if element.tag == "node":
             return prepare_node_element(element, node)
         elif element.tag == "way":
             return prepare_way_element(element, node)
         elif element.tag == "relation":
-            return prepare_way_element(element, node)
+            return prepare_relation_element(element, node)
     else:
         return None
 
@@ -46,11 +48,11 @@ def prepare_relation_element(element, node):
     for member in element.iter("member"):
         if 'members' not in node:
             node['members'] = {}
-        if member.type == "way":
+        if member.attrib['type'] == "way":
             if 'ways' not in node['members']:
                 node['members']['ways'] = []
             node['members']['ways'].append(member.attrib['ref'])
-        if member.type == "node":
+        if member.attrib['type'] == "node":
             if 'nodes' not in node['members']:
                 node['members']['nodes'] = []
             node['members']['node'].append(member.attrib['ref'])
