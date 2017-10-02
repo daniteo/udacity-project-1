@@ -10,6 +10,7 @@ import codecs
 
 OSM_FILE = "bh_map.osm"
 CREATED_TAGS = ["version", "changeset", "timestamp", "user", "uid"]
+KEYS_TO_CONVERT = ["amenity", "name"]
 JSON_DATA = []
 
 def prepare_element(element):
@@ -33,6 +34,10 @@ def prepare_element(element):
 def prepare_node_element(element, node):
     """ Convert 'node' elements to JSON format """
     node['position'] = [float(element.attrib['lat']), float(element.attrib['lon'])]
+    for tag in element.iter("tag"):
+        if tag.attrib['k'] in KEYS_TO_CONVERT:
+            node[tag.attrib['k']] = tag.attrib['v']
+
     return node
 
 def prepare_way_element(element, node):
@@ -55,7 +60,7 @@ def prepare_relation_element(element, node):
         if member.attrib['type'] == "node":
             if 'nodes' not in node['members']:
                 node['members']['nodes'] = []
-            node['members']['node'].append(member.attrib['ref'])
+            node['members']['nodes'].append(member.attrib['ref'])
     return node
 
 def get_creation_information(element):
