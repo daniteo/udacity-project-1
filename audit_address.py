@@ -85,31 +85,43 @@ def audit_zipcode(zipcode):
     else:
         return zipcode
 
+def is_address_element(element):
+    """ Check if the element belongs to a address tag """
+    return element.tag == "tag" and element.attrib['k'].startswith("addr")
+
 def is_street_element(element):
+    """ Check if the element belongs to a street address tag """
     return element.tag == "tag" and element.attrib['k'] == "addr:street"
 
 def is_suburb_element(element):
+    """ Check if the element belongs to a suburb address tag """
     return element.tag == "tag" and element.attrib['k'] == "addr:suburb"
 
-def is_addressnumber_element(element):
+def is_address_number_element(element):
+    """ Check if the element belongs to a number address tag """
     return element.tag == "tag" and element.attrib['k'] == "addr:housenumber"
 
 def is_zipcode_element(element):
+    """ Check if the element belongs to a zipcode address tag """
     return element.tag == "tag" and (element.attrib['k'] == "postal_code" or element.attrib['k'] == "addr:postcode")
 
 def audit_address(filename):
     """ Check the address data from OSM file """
     for _, element in ET.iterparse(filename, events=("start",)):
         if is_street_element(element):
-            audit_steet_type(element.attrib['v'])     
+            audit_steet_type(element.attrib['v'])
         elif is_suburb_element(element):
-            audit_suburb_name(element.attrib['v'])     
-        elif is_addressnumber_element(element):
-            audit_address_number(element.attrib['v'])     
+            audit_suburb_name(element.attrib['v'])
+        elif is_address_number_element(element):
+            audit_address_number(element.attrib['v'])
         elif is_zipcode_element(element):
-            audit_zipcode(element.attrib['v'])     
+            audit_zipcode(element.attrib['v'])
 
 def main():
+    """ 
+    Main function
+    Used to audit address data, checking which verification/changing its necessary to be done.
+    """
     audit_address(OSM_FILE)
     print(street_type_list)
     print(invalid_zipcode_list)

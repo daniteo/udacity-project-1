@@ -6,7 +6,8 @@ import pprint
 import time
 import json
 import codecs
-import data_audit
+import audit_address
+import audit_contact
 
 
 OSM_FILE = "bh_map.osm"
@@ -35,9 +36,12 @@ def prepare_element(element):
 def prepare_node_element(element, node):
     """ Convert 'node' elements to JSON format """
     node['position'] = [float(element.attrib['lat']), float(element.attrib['lon'])]
-    for tag in element.iter("tag"):
-        if tag.attrib['k'] in KEYS_TO_CONVERT:
-            node[tag.attrib['k']] = tag.attrib['v']
+    for tag_element in element.iter("tag"):
+        if audit_address.is_street_element(tag_element):
+            if "address" not in node:
+                node["adsress"]
+        if tag_element.attrib['k'] in KEYS_TO_CONVERT:
+            node[tag_element.attrib['k']] = tag_element.attrib['v']
 
     return node
 
@@ -89,7 +93,6 @@ def main():
     """ Main function """
     convert_file(OSM_FILE)
     #pprint.pprint(JSON_DATA)
-
 
 if __name__ == "__main__":
     main()
