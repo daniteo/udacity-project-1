@@ -8,7 +8,6 @@ street_type_re = re.compile(r'^\S+\.?\b', re.IGNORECASE)
 zipcode_re = re.compile(r'[0-9]{5}-{1}[0-9]{3}')
 address_number_re = re.compile(r'^[0-9]+')
 
-street_type_list = {}
 suburb_list = []
 city_list = []
 
@@ -16,6 +15,8 @@ invalid_address_number_list = []
 invalid_zipcode_list = []
 
 #Street Audit Structure
+invalid_street_type_list = {}
+
 valid_street_type = ["Alameda","Avenida","Praça","Rodovia","Rua"]
 
 street_type_mapping_replace = {
@@ -41,7 +42,7 @@ street_type_mapping_add = {
 }
 
 #City Audit Structure
-valid_city_name = ["Belo Horizonte", "Contagem"]
+region_city_name = ["Belo Horizonte", "Contagem", "Nova Lima", "Ribeirão das Neves", "Santa Luzia", "Sabará"]
 
 city_name_mapping = {
     "bh" : "Belo Horizonte",
@@ -57,7 +58,8 @@ city_name_mapping = {
     "Santa luzia" : "Santa Luzia"
 }
 
-def audit_steet_type(street_name):
+def process_steet_type_and_name(street_name):
+    street_type = ""
     match = street_type_re.search(street_name)
     if (match):
         street_type = match.group().lower().capitalize()
@@ -67,11 +69,14 @@ def audit_steet_type(street_name):
         elif street_type in street_type_mapping_add:  
             street_type = street_type_mapping_add[street_type]
             street_name = street_type+" "+street_name
-        if street_type not in valid_street_type:
-            if street_type not in street_type_list:
-                street_type_list[street_type] = []
-            street_type_list[street_type].append(street_name)
     return street_type, street_name
+
+def audit_steet_type(street_name):
+    street_type, street_name = process_steet_type_and_name(street_name)
+    if street_type not in valid_street_type:
+        if street_type not in invalid_street_type_list:
+            invalid_street_type_list[street_type] = []
+        invalid_street_type_list[street_type].append(street_name)
 
 def audit_suburb_name(suburb):
     if suburb not in suburb_list:
@@ -89,7 +94,10 @@ def audit_address_number(number):
 def city_name_cleaning(city):
     if city in city_name_mapping:
         city = city_name_mapping[city]
-    return city
+    if city in region_city_name:
+        return city
+    else:
+        return None
 
 def audit_city_name(city): 
     city = city_name_cleaning(city)   
