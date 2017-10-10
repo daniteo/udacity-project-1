@@ -4,18 +4,19 @@ from collections import defaultdict
 
 OSM_FILE = "bh_map.osm"
 
+#Regex used to validate address data
 street_type_re = re.compile(r'^\S+\.?\b', re.IGNORECASE)
 zipcode_re = re.compile(r'[0-9]{5}-{1}[0-9]{3}')
 address_number_re = re.compile(r'^[0-9]+')
+address_number_with_letter_re = re.compile(r'^[0-9]+[ ]?[A-Z]{1}', re.IGNORECASE)
 
+invalid_street_type_list = {}
 suburb_list = []
 city_list = []
-
 invalid_address_number_list = []
 invalid_zipcode_list = []
 
 #Street Audit Structure
-invalid_street_type_list = {}
 
 valid_street_type = ["Alameda","Avenida","Praça","Rodovia","Rua"]
 
@@ -101,7 +102,7 @@ def city_name_cleaning(city):
 
 def audit_city_name(city): 
     city = city_name_cleaning(city)   
-    if city not in city_list:
+    if city and city not in city_list:
         city_list.append(city)
 
 def audit_zipcode(zipcode):
@@ -162,7 +163,7 @@ def main():
     Used to audit address data, checking which verification/changing its necessary to be done.
     """
     audit_address(OSM_FILE)
-    print(street_type_list)
+    print(invalid_street_type_list)
     print(invalid_zipcode_list)
     print("\nInvalid address numbers:\n {0}\n".format(invalid_address_number_list))
     print("\nCity list:\n {0}\n".format(city_list))
