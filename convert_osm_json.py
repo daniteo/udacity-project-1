@@ -6,6 +6,7 @@ import pprint
 import time
 import json
 import codecs
+import data_audit
 
 
 OSM_FILE = "bh_map.osm"
