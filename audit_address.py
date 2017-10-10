@@ -86,9 +86,13 @@ def audit_address_number(number):
     else:
         return int(number)
 
-def audit_city_name(city):    
+def city_name_cleaning(city):
     if city in city_name_mapping:
         city = city_name_mapping[city]
+    return city
+
+def audit_city_name(city): 
+    city = city_name_cleaning(city)   
     if city not in city_list:
         city_list.append(city)
 
