@@ -10,10 +10,12 @@ address_number_re = re.compile(r'^[0-9]+')
 
 street_type_list = {}
 suburb_list = []
+city_list = []
 
 invalid_address_number_list = []
 invalid_zipcode_list = []
 
+#Street Audit Structure
 valid_street_type = ["Alameda","Avenida","Praça","Rodovia","Rua"]
 
 street_type_mapping_replace = {
@@ -36,6 +38,23 @@ street_type_mapping_add = {
     "Pium-i": "Rua",
     "Riachuelo": "Rua",
     "São" : "Rua"
+}
+
+#City Audit Structure
+valid_city_name = ["Belo Horizonte", "Contagem"]
+
+city_name_mapping = {
+    "bh" : "Belo Horizonte",
+    "Belo horizonte" : "Belo Horizonte",
+    "Belo Horizonte/MG" : "Belo Horizonte",
+    "belo horizonte" : "Belo Horizonte",
+    "BELO hORIZONTE" : "Belo Horizonte",
+    "Belo Horizonte - MG" : "Belo Horizonte",
+    "belo Horizonte" : "Belo Horizonte",
+    "Belo Horizonte MG Brazil" : "Belo Horizonte",
+    "CONTAGEM" : "Contagem",
+    "SANTA LUZIA" : "Santa Luzia",
+    "Santa luzia" : "Santa Luzia"
 }
 
 def audit_steet_type(street_name):
@@ -67,8 +86,11 @@ def audit_address_number(number):
     else:
         return int(number)
 
-def audit_city_name(suburb):    
-    pass
+def audit_city_name(city):    
+    if city in city_name_mapping:
+        city = city_name_mapping[city]
+    if city not in city_list:
+        city_list.append(city)
 
 def audit_zipcode(zipcode):
     match = zipcode_re.match(zipcode)
@@ -91,6 +113,9 @@ def is_street_element(element):
 def is_suburb_element(element):
     return element.tag == "tag" and element.attrib['k'] == "addr:suburb"
 
+def is_city_element(element):
+    return element.tag == "tag" and element.attrib['k'] == "addr:city"
+
 def is_addressnumber_element(element):
     return element.tag == "tag" and element.attrib['k'] == "addr:housenumber"
 
@@ -107,13 +132,16 @@ def audit_address(filename):
         elif is_addressnumber_element(element):
             audit_address_number(element.attrib['v'])     
         elif is_zipcode_element(element):
-            audit_zipcode(element.attrib['v'])     
+            audit_zipcode(element.attrib['v'])
+        elif is_city_element(element):
+            audit_city_name(element.attrib['v'])
 
 def main():
     audit_address(OSM_FILE)
     print(street_type_list)
     print(invalid_zipcode_list)
-    print(invalid_address_number_list)
+    print("\nInvalid address numbers:\n {0}\n".format(invalid_address_number_list))
+    print("\nCity list:\n {0}\n".format(city_list))
 
 if __name__ == "__main__":
     main()
