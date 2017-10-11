@@ -4,6 +4,8 @@ from collections import defaultdict
 
 OSM_FILE = "bh_map.osm"
 
+valid_address_tag = ["addr:street", "addr:city", "addr:postcode", "addr:housenumber", "addr:suburb"]
+
 #Regex used to validate address data
 street_type_re = re.compile(r'^\S+\.?\b', re.IGNORECASE)
 zipcode_re = re.compile(r'[0-9]{5}-{1}[0-9]{3}')
