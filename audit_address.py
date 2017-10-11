@@ -8,7 +8,7 @@ valid_address_tag = ["addr:street", "addr:city", "addr:postcode", "addr:housenum
 
 #Regex used to validate address data
 street_type_re = re.compile(r'^\S+\.?\b', re.IGNORECASE)
-zipcode_re = re.compile(r'[0-9]{5}-{1}[0-9]{3}')
+zipcode_re = re.compile(r'[0-9]{5}\-[0-9]{3}')
 address_number_re = re.compile(r'^[0-9]+')
 address_number_with_letter_re = re.compile(r'^[0-9]+[ ]?[A-Z]{1}', re.IGNORECASE)
 
@@ -107,9 +107,11 @@ def audit_city_name(city):
     if city and city not in city_list:
         city_list.append(city)
 
-def audit_zipcode(zipcode):
-    match = zipcode_re.match(zipcode)
-    if match == None:
+def clean_zipcode(zipcode):
+    match = zipcode_re.fullmatch(zipcode)
+    if match:
+        return zipcode
+    else:
         if len(zipcode) == 8:
             return zipcode[:5]+"-"+zipcode[5:]
         elif len(zipcode) == 5:
@@ -117,10 +119,12 @@ def audit_zipcode(zipcode):
         elif len(zipcode) == 10 and zipcode[2] == ".":
             return zipcode.replace(".","")
         else:
-            invalid_zipcode_list.append(zipcode)
-            return ""
-    else:
-        return zipcode
+            return None
+
+def audit_zipcode(zipcode):
+    zipcode_cleaned = clean_zipcode(zipcode)
+    if not zipcode_cleaned:
+        invalid_zipcode_list.append(zipcode)
 
 def is_address_element(element):
     """ Check if the element belongs to a address tag """
@@ -166,7 +170,7 @@ def main():
     """
     audit_address(OSM_FILE)
     print(invalid_street_type_list)
-    print(invalid_zipcode_list)
+    print("\nInvalid zipcodes:\n {0}\n".format(invalid_zipcode_list))
     print("\nInvalid address numbers:\n {0}\n".format(invalid_address_number_list))
     print("\nCity list:\n {0}\n".format(city_list))
 
