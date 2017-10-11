@@ -34,28 +34,28 @@ def prepare_element(element):
         return None
 
 def convert_address_tag_element(tag_element, address_node):
-""" Convert the address data from OSM file to JSON structure """
+    """ Convert the address data from OSM file to JSON structure """
     if audit_address.is_street_element(tag_element):
-        street_type, street_name = audit_address.process_steet_type_and_name(tag_element.attrib['k'])
+        street_type, street_name = audit_address.process_steet_type_and_name(tag_element.attrib['v'])
         address_node["street_type"] = street_type
         address_node["street"] = street_name
     if audit_address.is_city_element(tag_element):
-       address_node["city"] = audit_address.city_name_cleaning(tag_element.attrib['k'])
+       address_node["city"] = audit_address.city_name_cleaning(tag_element.attrib['v'])
     if audit_address.is_zipcode_element(tag_element):
+        address_node["zipcode"] = audit_address.clean_zipcode(tag_element.attrib['v'])
+    if audit_address.is_address_number_element(tag_element):
         pass
-    if audit.address.is_address_number_element(tag_element):
-        pass
-    if audit.address.is_suburb_element(tag_element):
-        address_node["suburb"] = tag_element.attrib['k']
+    if audit_address.is_suburb_element(tag_element):
+        address_node["suburb"] = tag_element.attrib['v']
     return address_node
 
 def convert_contact_tag_element(tag_element, contact_node):
-""" Convert the contact data from OSM file to JSON structure """
+    """ Convert the contact data from OSM file to JSON structure """
     if audit_contact.is_phone_element(tag_element):
         pass
     if audit_contact.is_email_element(tag_element):
         pass
-    if audit_contact.is_website_element(tag_element):
+    if audit_contact.is_site_element(tag_element):
         pass
     return contact_node
 
@@ -67,13 +67,14 @@ def prepare_node_element(element, node):
         if tag_element.attrib['k'] in audit_address.valid_address_tag:
             if "address" not in node:
                 node["address"] = {}
-            node["address"] = convert_address_tag_element(node["address"])
+            node["address"] = convert_address_tag_element(tag_element,node["address"])
         #Convert contact data
         if tag_element.attrib['k'] in audit_contact.valid_contact_tag:
             if "contact" not in node:
                 node["contact"] = {}
-            node["contact"] = convert_contact_tag_element(node["contact"])
-       if tag_element.attrib['k'] in KEYS_TO_CONVERT:
+            node["contact"] = convert_contact_tag_element(tag_element, node["contact"])
+        #Convert other tags
+        if tag_element.attrib['k'] in KEYS_TO_CONVERT:
             node[tag_element.attrib['k']] = tag_element.attrib['v']
 
     return node
@@ -124,8 +125,8 @@ def convert_file(file_in, pretty=False):
 
 def main():
     """ Main function """
-    convert_file(OSM_FILE)
-    #pprint.pprint(JSON_DATA)
+    convert_file(OSM_FILE, True)
+    pprint.pprint(JSON_DATA)
 
 if __name__ == "__main__":
     main()
