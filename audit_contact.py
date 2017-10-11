@@ -7,7 +7,7 @@ OSM_FILE = "bh_map.osm"
 valid_contact_tag = ["contact:phone","phone","contact:email","email","contact:website","website"]
 
 phonenumber_re = re.compile(r'\+?55 31 [0-9]{4,5}.[0-9]{4}')
-phonenumber_onlynumber_re = re.compile(r'\+?[5]{0,2} ?(31)? ?[0-9]{8}')
+phonenumber_onlynumber_re = re.compile(r'[0-9]{8}$')
 email_re = re.compile(r'^\S+@\S+\.\w+\.?\w?')
 site_re = re.compile(r'w{3}')
 
@@ -33,7 +33,7 @@ def clean_phone_number(phonenumber):
     phonenumber = phonenumber.replace("(","")
     phonenumber = phonenumber.replace(")","")
 
-    if phonenumber_onlynumber_re.match(phonenumber):
+    if phonenumber_onlynumber_re.search(phonenumber):
         phonenumber = "+55 31 "+phonenumber[-8:-4]+"-"+phonenumber[-4:]
 
     if phonenumber_re.fullmatch(phonenumber):
