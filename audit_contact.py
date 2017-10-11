@@ -6,13 +6,15 @@ OSM_FILE = "bh_map.osm"
 
 valid_contact_tag = ["contact:phone","phone","contact:email","email","contact:website","website"]
 
-phonenumber_re = re.compile(r'\+?55 31 [0-9]{4,5}.[0-9]{4}')
+phonenumber_re = re.compile(r'\+?55 31 9?[0-9]{4}.[0-9]{4}')
+phonenumber_without_code_re = re.compile(r'(?<!\+55 31 )[0-9]{4}[ \-][0-9]{4}$')
 phonenumber_onlynumber_re = re.compile(r'[0-9]{8}$')
 email_re = re.compile(r'^\S+@\S+\.\w+\.?\w?')
-site_re = re.compile(r'w{3}')
+site_re = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
 invalid_phone_number_list = []
 invalid_email_list = []
+invalid_website_list = []
 
 def convert_phone_number_to_list(phonenumber):
     """ 
@@ -32,6 +34,11 @@ def clean_phone_number(phonenumber):
     phonenumber = phonenumber.replace("  "," ")
     phonenumber = phonenumber.replace("(","")
     phonenumber = phonenumber.replace(")","")
+
+    match = phonenumber_without_code_re.search(phonenumber)
+    if match:
+        print(phonenumber)
+        phonenumber = "+55 31 "+match.group(0)
 
     if phonenumber_onlynumber_re.search(phonenumber):
         phonenumber = "+55 31 "+phonenumber[-8:-4]+"-"+phonenumber[-4:]
@@ -74,7 +81,7 @@ def audit_email(email):
 
 def audit_website(site):
     if not site_re.search(site):
-        print(site)
+        invalid_website_list.append(site)
 
 def is_phone_element(element):
     return element.tag == "tag" and (element.attrib['k'] == "contact:phone" or element.attrib['k'] == "phone")
@@ -100,6 +107,7 @@ def main():
     audit_contact(OSM_FILE)
     print("Telefones com formatos inválidos: \n{0}\n".format(invalid_phone_number_list))
     print("Emails inválidos: \n{0}\n".format(invalid_email_list))
+    print("Sites inválidos: \n{0}\n".format(invalid_website_list))
 
 if __name__ == "__main__":
     main()
