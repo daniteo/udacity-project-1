@@ -17,7 +17,7 @@ invalid_email_list = []
 invalid_website_list = []
 
 def convert_phone_number_to_list(phonenumber):
-    """ 
+    """
     If there is a number list separeted by semicolon, return an array with the number in list
     """
     if phonenumber.find(";") > 0:
@@ -84,9 +84,11 @@ def audit_website(site):
         invalid_website_list.append(site)
 
 def is_phone_element(element):
+    """ Check if elements belongs to a phone number data """
     return element.tag == "tag" and (element.attrib['k'] == "contact:phone" or element.attrib['k'] == "phone")
 
 def is_email_element(element):
+    """ Check if elements belongs to a email data """
     return element.tag == "tag" and (element.attrib['k'] == "contact:email" or element.attrib['k'] == "email")
 
 def is_site_element(element):

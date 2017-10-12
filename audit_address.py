@@ -7,9 +7,9 @@ OSM_FILE = "bh_map.osm"
 valid_address_tag = ["addr:street", "addr:city", "addr:postcode", "addr:housenumber", "addr:suburb"]
 
 #Regex used to validate address data
-street_type_re = re.compile(r'^\S+\.?\b', re.IGNORECASE)
-zipcode_re = re.compile(r'[0-9]{5}\-[0-9]{3}')
-address_number_re = re.compile(r'^[0-9]+')
+STREET_TYPE_RE = re.compile(r'^\S+\.?\b', re.IGNORECASE)
+ZIPCODE_RE = re.compile(r'[0-9]{5}\-[0-9]{3}')
+ADDRESS_NUMBER_RE = re.compile(r'^[0-9]+')
 address_number_with_letter_re = re.compile(r'^[0-9]+[ ]?[A-Z]{1}', re.IGNORECASE)
 
 invalid_street_type_list = {}
@@ -62,14 +62,16 @@ city_name_mapping = {
 }
 
 def process_steet_type_and_name(street_name):
+    """
+    """
     street_type = ""
-    match = street_type_re.search(street_name)
-    if (match):
+    match = STREET_TYPE_RE.search(street_name)
+    if match:
         street_type = match.group().lower().capitalize()
-        if street_type in street_type_mapping_replace:  
+        if street_type in street_type_mapping_replace:
             street_name = street_name.replace(street_type, street_type_mapping_replace[street_type])
             street_type = street_type_mapping_replace[street_type]
-        elif street_type in street_type_mapping_add:  
+        elif street_type in street_type_mapping_add:
             street_type = street_type_mapping_add[street_type]
             street_name = street_type+" "+street_name
     return street_type, street_name
@@ -86,7 +88,7 @@ def audit_suburb_name(suburb):
         suburb_list.append(suburb)
 
 def audit_address_number(number):
-    if address_number_re.fullmatch(number) == None:
+    if ADDRESS_NUMBER_RE.fullmatch(number) == None:
 #        match = address_number_re.search(number)
 #        if match:
 #            return int (match.group())
@@ -108,7 +110,13 @@ def audit_city_name(city):
         city_list.append(city)
 
 def clean_zipcode(zipcode):
-    match = zipcode_re.fullmatch(zipcode)
+    """
+    Clean zipcode value to match the "XXXXX-XXX" format.
+     - ZIP Codes with only 5 digits are appended "-000" at the end
+     - ZIP Codes registered with digits only have the "-" character inserted
+     - Remove "." characters from ZIP Codes
+    """
+    match = ZIPCODE_RE.fullmatch(zipcode)
     if match:
         return zipcode
     else:
@@ -117,7 +125,7 @@ def clean_zipcode(zipcode):
         elif len(zipcode) == 5:
             return zipcode+"-000"
         elif len(zipcode) == 10 and zipcode[2] == ".":
-            return zipcode.replace(".","")
+            return zipcode.replace(".", "")
         else:
             return None
 
