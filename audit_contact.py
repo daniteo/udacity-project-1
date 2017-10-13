@@ -1,16 +1,18 @@
+"""
+Audit contact data from nodes and ways
+"""
 import xml.etree.cElementTree as ET
 import re
-from collections import defaultdict
 
 OSM_FILE = "bh_map.osm"
 
-valid_contact_tag = ["contact:phone","phone","contact:email","email","contact:website","website"]
+valid_contact_tag = ["contact:phone", "phone", "contact:email", "email", "contact:website", "website"]
 
-phonenumber_re = re.compile(r'\+?55 31 9?[0-9]{4}.[0-9]{4}')
+PHONENUMBER_RE = re.compile(r'\+?55 31 9?[0-9]{4}.[0-9]{4}')
 phonenumber_without_code_re = re.compile(r'(?<!\+55 31 )[0-9]{4}[ \-][0-9]{4}$')
 phonenumber_onlynumber_re = re.compile(r'[0-9]{8}$')
-email_re = re.compile(r'^\S+@\S+\.\w+\.?\w?')
-site_re = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
+EMAIL_RE = re.compile(r'^\S+@\S+\.\w+\.?\w?')
+SITE_RE = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
 invalid_phone_number_list = []
 invalid_email_list = []
@@ -43,7 +45,7 @@ def clean_phone_number(phonenumber):
     if phonenumber_onlynumber_re.search(phonenumber):
         phonenumber = "+55 31 "+phonenumber[-8:-4]+"-"+phonenumber[-4:]
 
-    if phonenumber_re.fullmatch(phonenumber):
+    if PHONENUMBER_RE.fullmatch(phonenumber):
         if not phonenumber.startswith("+"):
             phonenumber = "+"+phonenumber
         return phonenumber
@@ -75,37 +77,38 @@ def audit_email(email):
     - Contain @
     - Contain at least one . 
     """
-    match = email_re.search(email)
+    match = EMAIL_RE.search(email)
     if match == None:
        invalid_email_list.append(email)
 
 def audit_website(site):
-    if not site_re.search(site):
+    if not SITE_RE.search(site):
         invalid_website_list.append(site)
 
 def is_phone_element(element):
-    """ Check if elements belongs to a phone number data """
+    """ Check if element belongs to a phone number data """
     return element.tag == "tag" and (element.attrib['k'] == "contact:phone" or element.attrib['k'] == "phone")
 
 def is_email_element(element):
-    """ Check if elements belongs to a email data """
+    """ Check if element belongs to a email data """
     return element.tag == "tag" and (element.attrib['k'] == "contact:email" or element.attrib['k'] == "email")
 
 def is_site_element(element):
+    """ Check if element belongs to a website data """
     return element.tag == "tag" and (element.attrib['k'] == "contact:website" or element.attrib['k'] == "website")
 
 def audit_contact(filename):
     """ Check the address data from OSM file """
     for _, element in ET.iterparse(filename, events=("start",)):
         if is_phone_element(element):
-            audit_phone_number(element.attrib['v'])    
+            audit_phone_number(element.attrib['v'])
         elif is_email_element(element):
             audit_email(element.attrib['v'])
         elif is_site_element(element):
             audit_website(element.attrib['v'])
 
-   
 def main():
+    """ Main function """
     audit_contact(OSM_FILE)
     print("Telefones com formatos inválidos: \n{0}\n".format(invalid_phone_number_list))
     print("Emails inválidos: \n{0}\n".format(invalid_email_list))
