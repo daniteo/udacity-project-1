@@ -11,9 +11,42 @@ Escolhi a cidade de Belo Horizonte para analise de dados por ser a minha cidade 
 
 ## Problemas Encontrados no Mapa
 
-### Tipos de Rua
+### Tipos de rua.
 
+Pelo fato dos dados cadastrados no Open Street Map serem feitos por diferentes pessoas, foi comum encontrar a descrição do tipo de ruas com diversos formatos. Essas divergencias podiam ser causadas por digitação errada, abreviação ou, em alguns casos, pela ausênia do tipo de rua no nome registrado. 
 
+Para tratar esta questão preparei 2 tipos de ajustes: uma para os casos em que era necessário substituir o nome, como  no exemplo abaixo:
+
+```
+street_type_mapping_replace = {
+    "Av" : "Avenida",
+    "Avendia" : "Avenida",
+    "Anél" : "Anel",
+    "Avenid" : "Avenida",
+    "Eua" : "Rua",
+    "Alamedas": "Alameda"
+}
+```
+No outro tipo de ajuste, foi necessário um tratamento particular, no qual eu verificava o valor digitado e analisava qual tipo de rua deveria ser inserido na frente do nome, como mostrado abaixo:
+
+```
+street_type_mapping_add = {
+    "Br" : "Rodovia",
+    "Br-381" : "Rodovia",
+    "Dos": "Rua",
+    "Francisco": "Rua",
+    "Paraíba": "Rua",
+    "Montes": "Rua",
+    "Contorno": "Avenida",
+    "Pium-i": "Rua",
+    "Riachuelo": "Rua",
+    "São" : "Rua"
+}
+```
+
+Esta avaliação foi feita de forma iterativa, através do script audit_address.py.
+
+### Número das casas
 
 ### CEP
 
@@ -33,12 +66,18 @@ Além dos casos acima citados que possuiam um formato possível de se identifica
 
 ### Número de Telefone
 
-Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Neste situação foram encontrados os seguintes formatos:
+Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript audit_contact.py e foram encontrados os seguintes formatos:
 
 1. Telefones completos, com DDI e DDD. Ex: +55 31 3333-3333
 2. Telefones completos, sem DDI e com DDD. Ex: 31 3333-3333
 3. Telefones completos, sem DDI e DDD. Ex: 3333-3333
 4. 
+
+Para conistência das informações, todos os telefones foram colocados no formato +55 31 XXXX-XXXX (fixo) ou +55 31 XXXXX-XXXX (móvel).
+
+##### Listas de telefone
+
+Uma outra possibilidade era a presença de listas de telefones no lugar de um único número para contato. As listas eram separadas por ponto-e-virgula (;). Separei estes casos em listas e cada um dos telefones registrados eram comparados com o formato permitido.
 
 ## Visão Geral dos Dados
 
