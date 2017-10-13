@@ -18,6 +18,8 @@ city_list = []
 invalid_address_number_list = []
 invalid_zipcode_list = []
 
+address_tags = set()
+
 #Street Audit Structure
 
 valid_street_type = ["Alameda","Avenida","Praça","Rodovia","Rua"]
@@ -160,6 +162,8 @@ def is_zipcode_element(element):
 def audit_address(filename):
     """ Check the address data from OSM file """
     for _, element in ET.iterparse(filename, events=("start",)):
+        if element.tag == "tag" and element.attrib['k'].startswith("addr:"):
+            address_tags.add(element.attrib['k'])
         if is_street_element(element):
             audit_steet_type(element.attrib['v'])
         elif is_suburb_element(element):
@@ -177,6 +181,7 @@ def main():
     Used to audit address data, checking which verification/changing its necessary to be done.
     """
     audit_address(OSM_FILE)
+    print("\nEstrutura:\n {0}\n".format(address_tags))
     print(invalid_street_type_list)
     print("\nInvalid zipcodes:\n {0}\n".format(invalid_zipcode_list))
     print("\nInvalid address numbers:\n {0}\n".format(invalid_address_number_list))
