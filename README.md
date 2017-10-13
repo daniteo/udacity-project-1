@@ -17,7 +17,7 @@ Pelo fato dos dados cadastrados no Open Street Map serem feitos por diferentes p
 
 Para tratar esta questão preparei 2 tipos de ajustes: uma para os casos em que era necessário substituir o nome, como  no exemplo abaixo:
 
-```
+```python
 street_type_mapping_replace = {
     "Av" : "Avenida",
     "Avendia" : "Avenida",
@@ -29,7 +29,7 @@ street_type_mapping_replace = {
 ```
 No outro tipo de ajuste, foi necessário um tratamento particular, no qual eu verificava o valor digitado e analisava qual tipo de rua deveria ser inserido na frente do nome, como mostrado abaixo:
 
-```
+```python
 street_type_mapping_add = {
     "Br" : "Rodovia",
     "Br-381" : "Rodovia",
@@ -52,7 +52,7 @@ Esta avaliação foi feita de forma iterativa, através do script audit_address.
 
 Foram encontrados diversos formatos para os CEPs cadastrados no [Open Street Map](https://www.openstreetmap.org/#map=11/-19.8839/-43.9570). Os CEPs das cidades brasileiras possuem o seguinte formato: XXXXX-XXX, onde X é um digito entre 0 e 9. Utilizei uma *regex* para identificar os CEPs no formato correto. 
 
-```
+```python
 ZIPCODE_RE = re.compile(r'[0-9]{5}\-[0-9]{3}')
 ```
 
@@ -66,6 +66,12 @@ Além dos casos acima citados que possuiam um formato possível de se identifica
 
 ### Número de Telefone
 
+O primeiro passo foi identicar quais os elementos que continha os dados a serem importados como telefone. Através de uma analise da estrutura de dados do OSM com o script audit_contact.py, optei por converter as tags com as seguintes chaves:
+
+- *addr:phone*
+- *addr:phone_1*
+- *phone* 
+
 Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript audit_contact.py e foram encontrados os seguintes formatos:
 
 1. Telefones completos, com DDI e DDD. Ex: +55 31 3333-3333
@@ -75,11 +81,18 @@ Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com divers
 
 Para conistência das informações, todos os telefones foram colocados no formato +55 31 XXXX-XXXX (fixo) ou +55 31 XXXXX-XXXX (móvel).
 
-##### Listas de telefone
+##### *Listas de telefone*
 
 Uma outra possibilidade era a presença de listas de telefones no lugar de um único número para contato. As listas eram separadas por ponto-e-virgula (;). Separei estes casos em listas e cada um dos telefones registrados eram comparados com o formato permitido.
 
 ## Visão Geral dos Dados
+
+### Arquivos utilizados
+
+1. bh_map.osm - Arquivo OSM com os dados da cidade de Belo Horizonte - Tamanho: 60MB
+2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 
+3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 
+4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 
 
 ## Outras Idéias
 
