@@ -49,13 +49,13 @@ street_type_mapping_add = {
 }
 ```
 
-Esta avaliação foi feita de forma iterativa, até que todos os casos existentes fossem tratados. Para isso foi utilizado o script **_audit\_address.py_**.
+Esta avaliação foi feita de forma iterativa, até que todos os casos existentes fossem tratados. Para isso foi utilizado o script `audit\_address.py`.
 
 ### Número das casas
 
 Um outro problema encontrado foi em relação aos números dos endereços (chave *addr:housenumber*). Varios números foram registrados incluindo seus complementos (letras, numeoros de sala, etc.) e foi necessário fazer a separação destes campos.
 
-Alguns exemplos de números fora do padrão esperado (numérico), identificados pelo script **_audit\_addess.py_**:
+Alguns exemplos de números fora do padrão esperado (numérico), identificados pelo script `audit\_addess.py`:
 
 - 2515.7149 - Aperentemente um número de telefone
 - 1534 A - Número: 1534 / Complemento: A
@@ -67,39 +67,41 @@ Primeiramente foram tratados todos corretamente formatados com base na expressã
 ADDRESS_NUMBER_RE = re.compile(r'^[0-9]+')
 ```
 
-Em seguido, procurou-se tratar os numeros que apresentavam os complementos na seqencia do numerico, ou separados por espaço, hifen(-) ou barra (/) com a expressão regular a seguir:
+Em seguida, procurou-se tratar os numeros que apresentavam os complementos na sequência do número, ou separados por espaço, virgula(,),  hifen(-) ou barra (/) com a expressão regular a seguir:
 
 ```python
-ADDRESS_NUMBER_WITH_LETTER_RE = re.compile(r'^([0-9]+)[ -/]?([A-Z]+[ ]*[0-9]*)', re.IGNORECASE)
+ADDRESS_NUMBER_WITH_NAME_RE = re.compile(r'^([0-9]+) ?[, \-/]? ?([A-Z0-9 º]+)', re.IGNORECASE)
 ```
 
 Desta forma o número registrado como _1452/Sala 206_ seria separado entre _1452_ (número) e _Sala 206_ (complemento).
 
+Os demais números que possuiam formato que não permitiam a identificação do número do endereço foram ignorados.
+
 ### CEP
 
-Foram encontrados diversos formatos para os CEPs cadastrados no [Open Street Map](https://www.openstreetmap.org/#map=11/-19.8839/-43.9570). Os CEPs das cidades brasileiras possuem o seguinte formato: XXXXX-XXX, onde X é um digito entre 0 e 9. Utilizei uma *regex* para identificar os CEPs no formato correto. 
+Foram encontrados diversos formatos para os CEPs cadastrados no [Open Street Map](https://www.openstreetmap.org/#map=11/-19.8839/-43.9570). Os CEPs da cidade de  Belo Horizonte possuem o seguinte formato: 3XXXX-XXX, onde X é um digito entre 0 e 9. Foi utilizada a expressão abaixo para identificar os CEPs no formato correto. 
 
 ```python
-ZIPCODE_RE = re.compile(r'[0-9]{5}\-[0-9]{3}')
+ZIPCODE_RE = re.compile(r'^3[0-9]{4}\-[0-9]{3}')
 ```
 
-Muitos dos CEPs cadastrados se encontravam com uma formatação diferente da apresentada acima. A partir de uma auditoria no dados feita com o script audit_address.py, encontrei os seguintes casos, com as respectivas solucões:
+Muitos dos CEPs cadastrados se encontravam com uma formatação diferente da apresentada acima. A partir de uma auditoria no dados feita com o script `audit_address.py`, foram encontrados os seguintes casos, com as respectivas solucões:
 
 1. CEPs com 5 digitos. Ex: 30411. Neste caso o CEP foi completado com o final "-000".
 2. CEPs com 8 digitos, sem separação com hifen (-). Ex: 30411080. Neste caso o hifen (-) foi adicionado, separando os 5 primeiros digitos dos 3 ultimos.
 3. CEPs com separador de milhar (.) nos primeiros 5 digitos. Ex: 30.411-080. Neste caso o sinal de milhar (.) foi removido do CEP.
 
-Além dos casos acima citados que possuiam um formato possível de se identificar um CEP válido, foram encontrados também alguns dados inválidos, os quais precisaram ser tratados de forma particular. 
+Além dos casos acima citados que possuiam formatos a partir dos quais era possível a identificação de um CEP válido, foram encontrados também alguns formatos de dados, os quais foram ignorados na conversão.
 
 ### Número de Telefone
 
-O primeiro passo foi identicar quais os elementos que continha os dados a serem importados como telefone. Através de uma analise da estrutura de dados do OSM com o script audit_contact.py, optei por converter as tags com as seguintes chaves:
+O primeiro passo foi identicar quais os elementos que continha os dados a serem importados como telefone. Através de uma analise da estrutura de dados do OSM com o script `audit_contact.py`, foram selecionadas para conversão as tags com as seguintes chaves:
 
 - *addr:phone*
 - *addr:phone_1*
 - *phone* 
 
-Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript audit_contact.py e foram encontrados os seguintes formatos:
+Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` e foram encontrados os seguintes formatos:
 
 1. Telefones completos, com DDI e DDD. Ex: +55 31 3333-3333
 2. Telefones completos, sem DDI e com DDD. Ex: 31 3333-3333
@@ -161,7 +163,6 @@ db.bh.find({"data_type":"relation"}).count()
 
 { "_id" : "Vítor Dias", "count" : 85303 }
 { "_id" : "patodiez", "count" : 32240 }
-
 { "_id" : "Gerald Weber", "count" : 26235 }
 { "_id" : "lmpinto", "count" : 18176 }
 { "_id" : "BladeTC", "count" : 15498 }
