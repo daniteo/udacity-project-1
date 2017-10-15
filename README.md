@@ -101,7 +101,16 @@ O primeiro passo foi identicar quais os elementos que continha os dados a serem 
 - *addr:phone_1*
 - *phone* 
 
-Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` e foram encontrados os seguintes formatos:
+Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` para identificar telefones válidos a partir das seguintes expressões regulares:
+
+```python
+PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
+PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
+```
+
+A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 
+
+Foram encontrados os seguintes formatos:
 
 1. Telefones completos, com DDI e DDD. Ex: +55 31 3333-3333
 2. Telefones completos, sem DDI e com DDD. Ex: 31 3333-3333
