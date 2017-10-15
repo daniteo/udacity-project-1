@@ -161,6 +161,7 @@ db.bh.find({"data_type":"relation"}).count()
 
 { "_id" : "Vítor Dias", "count" : 85303 }
 { "_id" : "patodiez", "count" : 32240 }
+
 { "_id" : "Gerald Weber", "count" : 26235 }
 { "_id" : "lmpinto", "count" : 18176 }
 { "_id" : "BladeTC", "count" : 15498 }
