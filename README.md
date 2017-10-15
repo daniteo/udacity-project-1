@@ -109,27 +109,49 @@ Uma outra possibilidade era a presença de listas de telefones no lugar de um ú
 #### Node
 
 ```mongodb
-db.node.find().count()
+db.bh.find({"data_type":"node"}).count()
 ```
-*253333*
+> *253333*
 
 #### Way
 
 ```mongodb
-db.way.find().count()
+db.bh.find({"data_type":"way"}).count()
 ```
-
-*48511*
+> *48511*
 
 #### Relation
 
 ```mongodb
-db.relation.find().count()
+db.bh.find({"data_type":"relation"}).count()
 ```
-
-*2001*
+> *2001*
 
 ### Usuários / Colaboradores
+
+#### 10 maiores colaboradores
+
+```
+> db.bh.aggregate([ 
+    {$group: {
+        "_id":"$created.user", 
+        "count":{$sum:1}
+    }},
+    {$sort:{count:-1}},
+    {$limit:10} 
+])
+```
+
+>{ "_id" : "Vítor Dias", "count" : 85303 }
+>{ "_id" : "patodiez", "count" : 32240 }
+>{ "_id" : "Gerald Weber", "count" : 26235 }
+>{ "_id" : "lmpinto", "count" : 18176 }
+>{ "_id" : "BladeTC", "count" : 15498 }
+>{ "_id" : "andrellym", "count" : 13723 }
+>{ "_id" : "Samuel Vale", "count" : 9356 }
+>{ "_id" : "Djavan Fagundes", "count" : 7418 }
+>{ "_id" : "Danilo C", "count" : 5846 }
+>{ "_id" : "ftrebien", "count" : 5408 }
 
 ## Outras Idéias
 
