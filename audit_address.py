@@ -4,13 +4,18 @@ from collections import defaultdict
 
 OSM_FILE = "bh_map.osm"
 
-valid_address_tag = ["addr:street", "addr:city", "addr:postcode", "addr:housenumber", "addr:suburb"]
+VALID_ADDRESS_TAG = ["addr:street",
+                     "addr:city",
+                     "addr:postcode",
+                     "addr:housenumber",
+                     "addr:housename",
+                     "addr:suburb"]
 
 #Regex used to validate address data
 STREET_TYPE_RE = re.compile(r'^\S+\.?\b', re.IGNORECASE)
-ZIPCODE_RE = re.compile(r'[0-9]{5}\-[0-9]{3}')
+ZIPCODE_RE = re.compile(r'^3[0-9]{4}\-[0-9]{3}')
 ADDRESS_NUMBER_RE = re.compile(r'^[0-9]+')
-address_number_with_letter_re = re.compile(r'^[0-9]+[ ]?[A-Z]{1}', re.IGNORECASE)
+ADDRESS_NUMBER_WITH_NAME_RE = re.compile(r'^([0-9]+) ?[, \-/]? ?([A-Z0-9 º]+)', re.IGNORECASE)
 
 invalid_street_type_list = {}
 suburb_list = []
@@ -22,7 +27,7 @@ address_tags = set()
 
 #Street Audit Structure
 
-valid_street_type = ["Alameda","Avenida","Praça","Rodovia","Rua"]
+valid_street_type = ["Alameda", "Avenida", "Praça", "Rodovia", "Rua"]
 
 street_type_mapping_replace = {
     "Av" : "Avenida",
@@ -89,14 +94,31 @@ def audit_suburb_name(suburb):
     if suburb not in suburb_list:
         suburb_list.append(suburb)
 
-def audit_address_number(number):
-    if ADDRESS_NUMBER_RE.fullmatch(number) == None:
-#        match = address_number_re.search(number)
-#        if match:
-#            return int (match.group())
-        invalid_address_number_list.append(number)
+#Address number audit
+def clean_address_number(number):
+    """
+    Check if the address number, has also a housename appended on it.
+    If so, clean the data, separate the housename from the number and
+    return both, in separeted vars
+    """
+    if ADDRESS_NUMBER_RE.fullmatch(number):
+        return int(number), None
     else:
-        return int(number)
+        match = ADDRESS_NUMBER_WITH_NAME_RE.fullmatch(number)
+        if match:
+            number = int(match.group(1))
+            housename = match.group(2)
+            return number, housename
+        else:
+            return None
+
+def audit_address_number(number):
+    """
+    Audit address number format
+    """
+    addr_number = clean_address_number(number)
+    if not addr_number:
+        invalid_address_number_list.append(number)
 
 def city_name_cleaning(city):
     if city in city_name_mapping:
@@ -118,9 +140,10 @@ def clean_zipcode(zipcode):
      - ZIP Codes registered with digits only have the "-" character inserted
      - Remove "." characters from ZIP Codes
     """
-    match = ZIPCODE_RE.fullmatch(zipcode)
+    match = ZIPCODE_RE.search(zipcode)
     if match:
-        return zipcode
+        print(match.group(0))
+        return match.group(0)
     else:
         if len(zipcode) == 8:
             return zipcode[:5]+"-"+zipcode[5:]
