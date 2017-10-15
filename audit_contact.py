@@ -8,9 +8,9 @@ OSM_FILE = "bh_map.osm"
 
 valid_contact_tag = ["contact:phone", "phone", "contact:email", "email", "contact:website", "website"]
 
-PHONENUMBER_RE = re.compile(r'\+?55 31 9?[0-9]{4}.[0-9]{4}')
+PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
+PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
 phonenumber_without_code_re = re.compile(r'(?<!\+55 31 )[0-9]{4}[ \-][0-9]{4}$')
-phonenumber_onlynumber_re = re.compile(r'[0-9]{8}$')
 EMAIL_RE = re.compile(r'^\S+@\S+\.\w+\.?\w?')
 SITE_RE = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
@@ -29,30 +29,29 @@ def convert_phone_number_to_list(phonenumber):
     else:
         return [phonenumber]
 
-def clean_phone_number(phonenumber):
+def process_phone_number(phonenumber):
     """
     Remove double spaces and parentesis and
     check if the phone number match the format +55 31 [X]XXXX-XXXX ou +55 31 [X]XXXX XXXX.
     """
-    phonenumber = phonenumber.strip()
-    phonenumber = phonenumber.replace("  "," ")
-    phonenumber = phonenumber.replace("(","")
-    phonenumber = phonenumber.replace(")","")
 
-    match = phonenumber_without_code_re.search(phonenumber)
+    match = PHONENUMBER_RE.search(phonenumber)
+    match2 = PHONENUMBER_ONLYNUMBER_RE.search(phonenumber)
+
+    phone = None
+
+
     if match:
-        print(phonenumber)
-        phonenumber = "+55 31 "+match.group(0)
+        phone = match.group(1)
+        phone = phone.replace(" ", "-")
+        print(" __ {0} -> {1}".format(phonenumber, phone))
+    elif match2:
+        phone = match2.group(1)
+        phone = phone[:-4]+"-"+phone[-4:]
+        print(" >> {0} -> {1}".format(phonenumber, phone))
 
-    if phonenumber_onlynumber_re.search(phonenumber):
-        phonenumber = "+55 31 "+phonenumber[-8:-4]+"-"+phonenumber[-4:]
 
-    if PHONENUMBER_RE.fullmatch(phonenumber):
-        if not phonenumber.startswith("+"):
-            phonenumber = "+"+phonenumber
-        return phonenumber
-    else:
-        return None
+    return phone
 
 def audit_phone_number(phonenumber):
     """
@@ -63,8 +62,8 @@ def audit_phone_number(phonenumber):
     returned_phone_list = []
 
     for phone in phone_list:
-        cleaned_phone = clean_phone_number(phone)
-        if (cleaned_phone):
+        cleaned_phone = process_phone_number(phone)
+        if cleaned_phone:
             returned_phone_list.append(cleaned_phone)
         else:
             invalid_phone_number_list.append(phone)
@@ -80,7 +79,7 @@ def audit_email(email):
     - Contain at least one . 
     """
     match = EMAIL_RE.search(email)
-    if match == None:
+    if not match:
        invalid_email_list.append(email)
 
 def audit_website(site):
