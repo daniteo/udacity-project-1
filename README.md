@@ -11,11 +11,15 @@ Escolhi a cidade de Belo Horizonte para analise de dados por ser a minha cidade 
 
 ## Problemas Encontrados no Mapa
 
+Os dados inseridos no Open Street Map são alimentados por diferentes usuários e, por essa razão, é comum encontrar descrições de mesmos tipos de dados com diversos formatos. Essas divergencias podiam ser causadas por digitação errada, abreviação ou, em alguns casos, pela ausência de alguma palavra no informação registrad. Desta forma, é importante uma analise dos dados e corrção ou padronização dos mesmos para obter uma analise mais apurada dos dados.
+
 ### Tipos de rua.
 
-Pelo fato dos dados cadastrados no Open Street Map serem feitos por diferentes pessoas, foi comum encontrar a descrição do tipo de ruas com diversos formatos. Essas divergencias podiam ser causadas por digitação errada, abreviação ou, em alguns casos, pela ausênia do tipo de rua no nome registrado. 
+Para os tipos de rua, foi necessário extrair esta informação do início do nome das ruas informados na estrutura do OSM, uma vez que não se possuia um campo específico para este dado.
 
-Para tratar esta questão preparei 2 tipos de ajustes: uma para os casos em que era necessário substituir o nome, como  no exemplo abaixo:
+Feita a extração, foram encontrados algumas divergências nas informações, como já se esperava. Para tratar esta questão preparei 2 tipos de ajustes: uma para os casos de abreviação do tipo da rua ou correção do nome informado e outro para os casos em que o tipo de rua não haviam sido informados no nome da rua.
+
+Para o primeiro caso, em que era necessário substituir o tipo encontrado, fiz um mapeamento para os tipos que deveria ser subsitituidos, conforme apresentado abaixo:
 
 ```python
 street_type_mapping_replace = {
@@ -27,7 +31,8 @@ street_type_mapping_replace = {
     "Alamedas": "Alameda"
 }
 ```
-No outro tipo de ajuste, foi necessário um tratamento particular, no qual eu verificava o valor digitado e analisava qual tipo de rua deveria ser inserido na frente do nome, como mostrado abaixo:
+
+No segundo caso, onde era necessário inserir o tipo de rua, foi necessário um tratamento particular. Foi verificado o valor regitrado, realizando uma analisava sobre qual tipo de rua deveria ser inserido na frente do nome, que seria feito com base num dicionário de mapeamento, como mostrado abaixo:
 
 ```python
 street_type_mapping_add = {
@@ -44,19 +49,31 @@ street_type_mapping_add = {
 }
 ```
 
-Esta avaliação foi feita de forma iterativa, através do script audit_address.py.
+Esta avaliação foi feita de forma iterativa, até que todos os casos existentes fossem tratados. Para isso foi utilizado o script **_audit\_address.py_**.
 
 ### Número das casas
 
-Um outro problema encontrado foi em relação aos números dos endereços (chave *addr:housenumber*). Varios números foram registrados considerando seus complementos (letras, numeoros de sala, etc.) e foi necessário fazer a separação destes campos.
+Um outro problema encontrado foi em relação aos números dos endereços (chave *addr:housenumber*). Varios números foram registrados incluindo seus complementos (letras, numeoros de sala, etc.) e foi necessário fazer a separação destes campos.
 
-Alguns exemplos de números fora do padrão esperado (numérico), identificados pelo script **_saudit_addess.py_**:
+Alguns exemplos de números fora do padrão esperado (numérico), identificados pelo script **_audit\_addess.py_**:
 
 - 2515.7149 - Aperentemente um número de telefone
 - 1534 A - Número: 1534 / Complemento: A
 - 1452/Sala 206 - Número: 1452 / Complemento: Sala 206
 
+Primeiramente foram tratados todos corretamente formatados com base na expressão regular abaixo:
 
+```python
+ADDRESS_NUMBER_RE = re.compile(r'^[0-9]+')
+```
+
+Em seguido, procurou-se tratar os numeros que apresentavam os complementos na seqencia do numerico, ou separados por espaço, hifen(-) ou barra (/) com a expressão regular a seguir:
+
+```python
+ADDRESS_NUMBER_WITH_LETTER_RE = re.compile(r'^([0-9]+)[ -/]?([A-Z]+[ ]*[0-9]*)', re.IGNORECASE)
+```
+
+Desta forma o número registrado como _1452/Sala 206_ seria separado entre _1452_ (número) e _Sala 206_ (complemento).
 
 ### CEP
 
@@ -108,21 +125,21 @@ Uma outra possibilidade era a presença de listas de telefones no lugar de um ú
 
 #### Node
 
-```mongodb
+```
 db.bh.find({"data_type":"node"}).count()
 ```
 > *253333*
 
 #### Way
 
-```mongodb
+```
 db.bh.find({"data_type":"way"}).count()
 ```
 > *48511*
 
 #### Relation
 
-```mongodb
+```
 db.bh.find({"data_type":"relation"}).count()
 ```
 > *2001*
@@ -142,17 +159,39 @@ db.bh.find({"data_type":"relation"}).count()
 ])
 ```
 
->{ "_id" : "Vítor Dias", "count" : 85303 }
->{ "_id" : "patodiez", "count" : 32240 }
->{ "_id" : "Gerald Weber", "count" : 26235 }
->{ "_id" : "lmpinto", "count" : 18176 }
->{ "_id" : "BladeTC", "count" : 15498 }
->{ "_id" : "andrellym", "count" : 13723 }
->{ "_id" : "Samuel Vale", "count" : 9356 }
->{ "_id" : "Djavan Fagundes", "count" : 7418 }
->{ "_id" : "Danilo C", "count" : 5846 }
->{ "_id" : "ftrebien", "count" : 5408 }
+{ "_id" : "Vítor Dias", "count" : 85303 }
+{ "_id" : "patodiez", "count" : 32240 }
+{ "_id" : "Gerald Weber", "count" : 26235 }
+{ "_id" : "lmpinto", "count" : 18176 }
+{ "_id" : "BladeTC", "count" : 15498 }
+{ "_id" : "andrellym", "count" : 13723 }
+{ "_id" : "Samuel Vale", "count" : 9356 }
+{ "_id" : "Djavan Fagundes", "count" : 7418 }
+{ "_id" : "Danilo C", "count" : 5846 }
+{ "_id" : "ftrebien", "count" : 5408 }
+
+#### Quantidade de contribuições por ano
+
+```
+> db.bh.aggregate([
+      {"$project":{"year":{"$substr":["$created.timestamp",0,4]},}},
+      {"$group": {"_id":"$year", "count":{"$sum":1}}},
+      {"$sort":{"count":-1}}
+ ])
+```
+{ "_id" : "2017", "count" : 83841 }
+{ "_id" : "2013", "count" : 73387 }
+{ "_id" : "2015", "count" : 37471 }
+{ "_id" : "2014", "count" : 26880 }
+{ "_id" : "2012", "count" : 23339 }
+{ "_id" : "2016", "count" : 16642 }
+{ "_id" : "2011", "count" : 13852 }
+{ "_id" : "2008", "count" : 12517 }
+{ "_id" : "2009", "count" : 6434 }
+{ "_id" : "2007", "count" : 5070 }
+{ "_id" : "2010", "count" : 4412 }
 
 ## Outras Idéias
 
 ## Conclusão
+
