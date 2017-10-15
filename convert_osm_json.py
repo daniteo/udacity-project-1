@@ -106,6 +106,8 @@ def convert_element(element):
         node['id'] = int(element.attrib['id'])
         node['created'] = get_creation_information(element)
 
+        node['data_type'] = element.tag
+
         #Get position data for node type elements
         if element.tag == "node":
             node['position'] = [float(element.attrib['lat']), float(element.attrib['lon'])]
