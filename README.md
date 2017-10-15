@@ -48,6 +48,16 @@ Esta avaliação foi feita de forma iterativa, através do script audit_address.
 
 ### Número das casas
 
+Um outro problema encontrado foi em relação aos números dos endereços (chave *addr:housenumber*). Varios números foram registrados considerando seus complementos (letras, numeoros de sala, etc.) e foi necessário fazer a separação destes campos.
+
+Alguns exemplos de números fora do padrão esperado (numérico), identificados pelo script **_saudit_addess.py_**:
+
+- 2515.7149 - Aperentemente um número de telefone
+- 1534 A - Número: 1534 / Complemento: A
+- 1452/Sala 206 - Número: 1452 / Complemento: Sala 206
+
+
+
 ### CEP
 
 Foram encontrados diversos formatos para os CEPs cadastrados no [Open Street Map](https://www.openstreetmap.org/#map=11/-19.8839/-43.9570). Os CEPs das cidades brasileiras possuem o seguinte formato: XXXXX-XXX, onde X é um digito entre 0 e 9. Utilizei uma *regex* para identificar os CEPs no formato correto. 
@@ -93,6 +103,33 @@ Uma outra possibilidade era a presença de listas de telefones no lugar de um ú
 2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 
 3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 
 4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 
+
+### Quantidade de elementos importados para o MongoDB
+
+#### Node
+
+```mongodb
+db.node.find().count()
+```
+*253333*
+
+#### Way
+
+```mongodb
+db.way.find().count()
+```
+
+*48511*
+
+#### Relation
+
+```mongodb
+db.relation.find().count()
+```
+
+*2001*
+
+### Usuários / Colaboradores
 
 ## Outras Idéias
 
