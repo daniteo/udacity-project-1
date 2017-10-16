@@ -45,7 +45,10 @@ def convert_contact_tag_element(tag_element, contact_node):
     if audit_contact.is_phone_element(tag_element):
         phone = audit_contact.clean_phone_number(tag_element.attrib['v'])
         if phone:
-            contact_node["phone"] = phone
+            if "phone" in contact_node:
+                contact_node["phone"].append(phone)
+            else:
+                contact_node["phone"] = phone
     if audit_contact.is_email_element(tag_element):
         pass
     if audit_contact.is_site_element(tag_element):
