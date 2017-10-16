@@ -155,7 +155,7 @@ db.bh.find({"data_type":"relation"}).count()
 ```
 > *2001*
 
-### Usuários / Colaboradores
+### Colaborações
 
 #### 10 maiores colaboradores
 
@@ -182,7 +182,6 @@ Resultado:
 { "_id" : "Danilo C", "count" : 5846 }
 { "_id" : "ftrebien", "count" : 5408 }
 ```
-
 #### Quantidade de contribuições por ano
 
 ```
