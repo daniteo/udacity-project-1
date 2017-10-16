@@ -108,7 +108,7 @@ PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
 PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
 ```
 
-A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 
+A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 31.
 
 Foram encontrados os seguintes formatos:
 
@@ -170,7 +170,7 @@ db.bh.find({"data_type":"relation"}).count()
 ])
 ```
 
-{ "_id" : "Vítor Dias", "count" : 85303 }
+{ "_id" : "Vítor Dias", "count" : 85303 }\n
 { "_id" : "patodiez", "count" : 32240 }
 { "_id" : "Gerald Weber", "count" : 26235 }
 { "_id" : "lmpinto", "count" : 18176 }
