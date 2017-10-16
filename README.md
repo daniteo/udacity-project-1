@@ -101,27 +101,27 @@ O primeiro passo foi identicar quais os elementos que continha os dados a serem 
 - *addr:phone_1*
 - *phone* 
 
-Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 ou 9 digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` para identificar telefones válidos a partir das seguintes expressões regulares:
+Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 (fixo) ou 9 (móvel) digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` para identificar telefones válidos a partir das seguintes expressões regulares:
 
 ```python
 PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
 PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
 ```
 
-A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 
+A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 31. Abaixo 2 exemplos de como a limpeza foi realizada:
 
-Foram encontrados os seguintes formatos:
+1) Número: **31 3123-1234**:
+  - Extração do número do telefone (3123-1234) 
+  - Inserção do prefixo "+55 31 " no início do número (+55 31 3123-1234)
 
-1. Telefones completos, com DDI e DDD. Ex: +55 31 3333-3333
-2. Telefones completos, sem DDI e com DDD. Ex: 31 3333-3333
-3. Telefones completos, sem DDI e DDD. Ex: 3333-3333
-4. 
-
-Para conistência das informações, todos os telefones foram colocados no formato +55 31 XXXX-XXXX (fixo) ou +55 31 XXXXX-XXXX (móvel).
+2) Número: **55 31 981231234**:
+  - Extração do número do telefone (981231234)
+  - Separação do número de telefone com o hífen (98123-1234)
+  - Inserção do prefixo "+55 31 " no início do número (+55 31 98123-1234)
 
 ##### *Listas de telefone*
 
-Uma outra possibilidade era a presença de listas de telefones no lugar de um único número para contato. As listas eram separadas por ponto-e-virgula (;). Separei estes casos em listas e cada um dos telefones registrados eram comparados com o formato permitido.
+Uma outra entrada encontrada era a presença de listas de telefones no lugar de um único número para contato. As listas eram separadas por ponto-e-virgula (;). Para o tratamento dessa situação, o primeiro passo foi retornar o valor encontrado no número do telefone no formato de lista. Posteriormente cada número da lista é validado com os formatos esperados para o telefone.
 
 ## Visão Geral dos Dados
 
@@ -169,7 +169,8 @@ db.bh.find({"data_type":"relation"}).count()
     {$limit:10} 
 ])
 ```
-
+Resultado:
+```
 { "_id" : "Vítor Dias", "count" : 85303 }
 { "_id" : "patodiez", "count" : 32240 }
 { "_id" : "Gerald Weber", "count" : 26235 }
@@ -180,6 +181,7 @@ db.bh.find({"data_type":"relation"}).count()
 { "_id" : "Djavan Fagundes", "count" : 7418 }
 { "_id" : "Danilo C", "count" : 5846 }
 { "_id" : "ftrebien", "count" : 5408 }
+```
 
 #### Quantidade de contribuições por ano
 
@@ -189,6 +191,8 @@ db.bh.find({"data_type":"relation"}).count()
       {"$group": {"_id":"$year", "count":{"$sum":1}}},
       {"$sort":{"count":-1}}
  ])
+```
+Resultado:
 ```
 { "_id" : "2017", "count" : 83841 }
 { "_id" : "2013", "count" : 73387 }
@@ -201,6 +205,7 @@ db.bh.find({"data_type":"relation"}).count()
 { "_id" : "2009", "count" : 6434 }
 { "_id" : "2007", "count" : 5070 }
 { "_id" : "2010", "count" : 4412 }
+```
 
 ## Outras Idéias
 
