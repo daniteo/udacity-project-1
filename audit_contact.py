@@ -72,15 +72,22 @@ def audit_phone_number(phonenumber):
     return returned_phone_list
 
 
-def audit_email(email):
+def check_email(email):
     """
     Check if the email match the following format:
     - Start with a letter
     - Contain @
-    - Contain at least one . 
+    - Contain at least one .
     """
     match = EMAIL_RE.search(email)
-    if not match:
+    if match:
+        return email
+    else:
+        return None
+
+def audit_email(email):
+    email = check_email(email)
+    if not email:
        invalid_email_list.append(email)
 
 def audit_website(site):

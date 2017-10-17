@@ -43,14 +43,14 @@ def convert_address_tag_element(element, address_node):
 def convert_contact_tag_element(tag_element, contact_node):
     """ Convert the contact data from OSM file to JSON structure """
     if audit_contact.is_phone_element(tag_element):
-        phone = audit_contact.clean_phone_number(tag_element.attrib['v'])
+        phone = audit_contact.process_phone_number(tag_element.attrib['v'])
         if phone:
             if "phone" in contact_node:
                 contact_node["phone"].append(phone)
             else:
                 contact_node["phone"] = phone
     if audit_contact.is_email_element(tag_element):
-        pass
+        contact_node["email"] = audit_contact.check_email(tag_element.attrib['v'])
     if audit_contact.is_site_element(tag_element):
         pass
     return contact_node
