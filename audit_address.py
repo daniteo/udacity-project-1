@@ -110,7 +110,7 @@ def clean_address_number(number):
             housename = match.group(2)
             return number, housename
         else:
-            return None
+            return None, None
 
 def audit_address_number(number):
     """
@@ -142,7 +142,6 @@ def clean_zipcode(zipcode):
     """
     match = ZIPCODE_RE.search(zipcode)
     if match:
-        print(match.group(0))
         return match.group(0)
     else:
         if len(zipcode) == 8:
