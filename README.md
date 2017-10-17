@@ -101,12 +101,21 @@ O primeiro passo foi identicar quais os elementos que continha os dados a serem 
 - *addr:phone_1*
 - *phone* 
 
-Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 (fixo) ou 9 (móvel) digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` para identificar telefones válidos a partir das seguintes expressões regulares:
+Assim como ocorreu com o CEP, foram encontrados telefones cadastrados com diversas formatações. O primeiro passo foi identificar os telefones válidos e homogeneizá-los para manter a consistência dos dados. Os formatos validos são aqueles com 8 (fixo) ou 9 (móvel) digitos, com ou sem DDD (31) e DDI (55). Nesta situação, usei o sript `audit_contact.py` para identificar telefones válidos a partir da seguinte expressão regular:
 
 ```python
-PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
-PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
+PHONENUMBER_RE = re.compile(r'\+?[5]{0,2} *.?31.? *(9?[0-9]{4}[\- ]?[0-9]{4})$')
 ```
+
+Para este padrão é necessário que pelo menoso DDD de Belo Horizonte (31) deva ser informado, junto com o telefone. O número pode ser precedido ou não pelo DDI (+55).   
+
+O segundo padrão identificado foram aqueles em que apenas o número do telefone foi informado, com ou sem separador. Este números deveriam possuir 8 (fixo) ou 9 (móvel) digitos. No caso de números com 9 digitos, ele deveria ser iniciado com o 9, identificado como um número de celular.
+
+```python
+PHONENUMBER_ONLYNUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ]?[0-9]{4}$)')
+```
+
+Os números que não se adequaram a nenhuma das duas expressões usadas, foram desconsiderados.
 
 A partir dos telefones encontrados, extraiu-se dos dados informados no arquivo OSM a parte dos telefones sem DDD ou DDI, os quais foram inseridos ao final da limpeza, considerando que o DDI do Brasil é 55 e o DDD de Belo Horizonte é 31. Abaixo 2 exemplos de como a limpeza foi realizada:
 
