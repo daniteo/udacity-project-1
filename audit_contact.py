@@ -8,9 +8,8 @@ OSM_FILE = "bh_map.osm"
 
 valid_contact_tag = ["contact:phone", "phone", "contact:email", "email", "contact:website", "website"]
 
-PHONENUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ][0-9]{4})$')
-PHONENUMBER_ONLYNUMBER_RE = re.compile(r' (9?[0-9]{8}$)')
-phonenumber_without_code_re = re.compile(r'(?<!\+55 31 )[0-9]{4}[ \-][0-9]{4}$')
+PHONENUMBER_RE = re.compile(r'\+?[5]{0,2} *.?31.? *(9?[0-9]{4}[\- ]?[0-9]{4})$')
+PHONENUMBER_ONLYNUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ]?[0-9]{4}$)')
 EMAIL_RE = re.compile(r'^\S+@\S+\.\w+\.?\w?')
 SITE_RE = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
@@ -35,21 +34,23 @@ def process_phone_number(phonenumber):
     check if the phone number match the format +55 31 [X]XXXX-XXXX ou +55 31 [X]XXXX XXXX.
     """
 
-    match = PHONENUMBER_RE.search(phonenumber)
-    match2 = PHONENUMBER_ONLYNUMBER_RE.search(phonenumber)
+    match = PHONENUMBER_RE.fullmatch(phonenumber.strip())
 
     phone = None
 
-
     if match:
         phone = match.group(1)
-        phone = phone.replace(" ", "-")
-        print(" __ {0} -> {1}".format(phonenumber, phone))
-    elif match2:
-        phone = match2.group(1)
-        phone = phone[:-4]+"-"+phone[-4:]
-        print(" >> {0} -> {1}".format(phonenumber, phone))
+    else:
+        match = PHONENUMBER_ONLYNUMBER_RE.fullmatch(phonenumber.strip())
+        if match:
+            phone = match.group(1)
 
+    if phone:
+        #Replace whitespace separator for hifen (-)
+        phone = phone.replace(" ", "-")
+        #If phone has only nubers
+        if phone.find("-") == -1:
+            phone = phone[:-4]+"-"+phone[-4:]
 
     return phone
 
