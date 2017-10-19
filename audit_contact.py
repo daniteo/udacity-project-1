@@ -13,11 +13,9 @@ PHONENUMBER_ONLYNUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ]?[0-9]{4}$)')
 EMAIL_RE = re.compile(r'^\S+@\S+\.\w+\.?\w?')
 SITE_RE = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
-invalid_phone_number_list = []
-invalid_email_list = []
-invalid_website_list = []
-
-contacts_tags = set()
+INVALID_PHONE_NUMBER_LIST = []
+INVALID_EMAIL_LIST = []
+INVALID_WEBSITE_LIST = []
 
 def convert_phone_number_to_list(phonenumber):
     """
@@ -30,14 +28,13 @@ def convert_phone_number_to_list(phonenumber):
 
 def process_phone_number(phonenumber):
     """
-    Remove double spaces and parentesis and
-    check if the phone number match the format +55 31 [X]XXXX-XXXX ou +55 31 [X]XXXX XXXX.
+    Verify telephone numbers by matching it with the phones regex pattern
+    and normalize it to format +55 31 9xxxx-xxxx
     """
 
     match = PHONENUMBER_RE.fullmatch(phonenumber.strip())
 
     phone = None
-
     if match:
         phone = match.group(1)
     else:
@@ -52,11 +49,14 @@ def process_phone_number(phonenumber):
         if phone.find("-") == -1:
             phone = phone[:-4]+"-"+phone[-4:]
 
+    if phone:
+        phone = "+55 31 "+phone
+
     return phone
 
 def audit_phone_number(phonenumber):
     """
-    Log invalid phone numbers to be evaluated
+    Log phone numbers the not match the pattern to array invalid_phone_number_list
     """
     phone_list = convert_phone_number_to_list(phonenumber)
 
@@ -67,7 +67,7 @@ def audit_phone_number(phonenumber):
         if cleaned_phone:
             returned_phone_list.append(cleaned_phone)
         else:
-            invalid_phone_number_list.append(phone)
+            INVALID_PHONE_NUMBER_LIST.append(phone)
 
     return returned_phone_list
 
@@ -86,13 +86,27 @@ def check_email(email):
         return None
 
 def audit_email(email):
-    email = check_email(email)
-    if not email:
-       invalid_email_list.append(email)
+    """
+    Log invalid email (not match email pattern) to array INVALID_EMAIL_LIST
+    """
+    if not check_email(email):
+        INVALID_EMAIL_LIST.append(email)
+
+def check_site(site):
+    """
+    Check if the site match the the webite pattern:
+    """
+    if SITE_RE.search(site):
+        return site
+    else:
+        return None
 
 def audit_website(site):
-    if not SITE_RE.search(site):
-        invalid_website_list.append(site)
+    """
+    Log invalid site (not match site pattern) to array INVALID_WEBSITE_LIST
+    """
+    if not check_site(site):
+        INVALID_WEBSITE_LIST.append(site)
 
 def is_phone_element(element):
     """ Check if element belongs to a phone number data """
@@ -113,8 +127,6 @@ def has_contact_attr(element):
 def audit_contact(filename):
     """ Check the address data from OSM file """
     for _, element in ET.iterparse(filename, events=("start",)):
-        if has_contact_attr(element):
-            contacts_tags.add(element.attrib['k'])
         if is_phone_element(element):
             audit_phone_number(element.attrib['v'])
         elif is_email_element(element):
@@ -125,10 +137,9 @@ def audit_contact(filename):
 def main():
     """ Main function """
     audit_contact(OSM_FILE)
-    print("Estrutura: \n{0}\n".format(sorted(contacts_tags)))
-    print("Telefones com formatos inválidos: \n{0}\n".format(invalid_phone_number_list))
-    print("Emails inválidos: \n{0}\n".format(invalid_email_list))
-    print("Sites inválidos: \n{0}\n".format(invalid_website_list))
+    print("Telefones com formatos inválidos: \n{0}\n".format(INVALID_PHONE_NUMBER_LIST))
+    print("Emails inválidos: \n{0}\n".format(INVALID_EMAIL_LIST))
+    print("Sites inválidos: \n{0}\n".format(INVALID_WEBSITE_LIST))
 
 if __name__ == "__main__":
     main()
