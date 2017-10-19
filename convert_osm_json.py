@@ -2,7 +2,6 @@
 Prepare the OSM file from Belo Horizonte to a JSON format to be imported to MongoDB
 """
 import xml.etree.cElementTree as ET
-import pprint
 import json
 import codecs
 import audit_address
@@ -16,10 +15,11 @@ JSON_RELATION_OUT = codecs.open("bh_relation.json", "w", "utf-8")
 
 CREATED_TAGS = ["version", "changeset", "timestamp", "user", "uid"]
 KEYS_TO_CONVERT = ["amenity", "name", "shop", "leisure", "cuisine", "highway", "area", "type"]
-JSON_DATA = []
 
 def convert_address_tag_element(element, address_node):
-    """ Convert the address data from OSM file to JSON structure """
+    """
+    Verify and convert address data from OSM file to JSON structure
+    """
     if audit_address.is_street_element(element):
         street_type, street_name = audit_address.process_steet_type_and_name(element.attrib['v'])
         address_node["street_type"] = street_type
@@ -41,7 +41,9 @@ def convert_address_tag_element(element, address_node):
     return address_node
 
 def convert_contact_tag_element(tag_element, contact_node):
-    """ Convert the contact data from OSM file to JSON structure """
+    """
+    Verify and convert contact data from OSM file to JSON structure
+    """
     if audit_contact.is_phone_element(tag_element):
         phone = audit_contact.process_phone_number(tag_element.attrib['v'])
         if phone:
@@ -50,9 +52,13 @@ def convert_contact_tag_element(tag_element, contact_node):
             else:
                 contact_node["phone"] = phone
     if audit_contact.is_email_element(tag_element):
-        contact_node["email"] = audit_contact.check_email(tag_element.attrib['v'])
+        email = audit_contact.check_email(tag_element.attrib['v'])
+        if email:
+            contact_node["email"] = email
     if audit_contact.is_site_element(tag_element):
-        pass
+        site = audit_contact.check_site(tag_element.attrib['v'])
+        if site:
+            contact_node["site"] = site
     return contact_node
 
 def convert_way_node_refs(element):
@@ -65,7 +71,7 @@ def convert_way_node_refs(element):
     return node_refs
 
 def convert_member_element(element):
-    """ 
+    """
     Convert members elements from 'relation' elements to JSON format
     """
     member_list = {}
@@ -89,6 +95,9 @@ def get_creation_information(element):
     return created
 
 def convert_tag_element(element, node):
+    """
+    Convert the common tag data structure from OSM to the JSON file
+    """
     for tag_element in element.iter("tag"):
         #Convert address data
         if tag_element.attrib['k'] in audit_address.VALID_ADDRESS_TAG:
@@ -141,6 +150,9 @@ def convert_element(element):
         return None
 
 def record_document(elem_type, elem, pretty):
+    """
+    Check the elemet type to determine which JSON file should be written
+    """
     if elem_type == "node":
         out = JSON_NODE_OUT
     elif elem_type == "way":
@@ -155,19 +167,15 @@ def record_document(elem_type, elem, pretty):
 
 def convert_file(file_in, pretty=False):
     """ Convert an OSM file to a JSON format """
-    #file_out = "{0}_{1}.json".format(file_in, time.time())
-    #with codecs.open(file_out, "w") as out:
     osm_file_in = codecs.open(file_in, 'r', 'utf-8')
     for _, element in ET.iterparse(osm_file_in, events=("start",)):
         elem = convert_element(element)
         if elem:
-            JSON_DATA.append(elem)
             record_document(element.tag, elem, pretty)
 
 def main():
     """ Main function """
     convert_file(OSM_FILE, True)
-    #pprint.pprint(JSON_DATA)
 
 if __name__ == "__main__":
     main()
