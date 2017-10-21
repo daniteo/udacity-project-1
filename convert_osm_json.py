@@ -13,8 +13,24 @@ JSON_NODE_OUT = codecs.open("bh_node.json", "w", "utf-8")
 JSON_WAY_OUT = codecs.open("bh_way.json", "w", "utf-8")
 JSON_RELATION_OUT = codecs.open("bh_relation.json", "w", "utf-8")
 
-CREATED_TAGS = ["version", "changeset", "timestamp", "user", "uid"]
-KEYS_TO_CONVERT = ["amenity", "name", "shop", "leisure", "cuisine", "highway", "area", "type"]
+#Attrib to be mapped to the 'created' structure in JSON
+CREATED_ATTRIBS = ["version",
+                   "changeset",
+                   "timestamp",
+                   "user",
+                   "uid"]
+
+#Others tags to be convert from OSM to JSON file.
+#Address and contact are mapped in specif audit files
+KEYS_TO_CONVERT = ["amenity",
+                   "name",
+                   "shop",
+                   "leisure",
+                   "cuisine",
+                   "highway",
+                   "area",
+                   "microbrewery",
+                   "type"]
 
 def convert_address_tag_element(element, address_node):
     """
@@ -24,20 +40,22 @@ def convert_address_tag_element(element, address_node):
         street_type, street_name = audit_address.process_steet_type_and_name(element.attrib['v'])
         address_node["street_type"] = street_type
         address_node["street"] = street_name
-    if audit_address.is_city_element(element):
+    elif audit_address.is_city_element(element):
         address_node["city"] = audit_address.city_name_cleaning(element.attrib['v'])
-    if audit_address.is_zipcode_element(element):
+    elif audit_address.is_zipcode_element(element):
         zipcode = audit_address.clean_zipcode(element.attrib['v'])
         if zipcode:
             address_node["zipcode"] = zipcode
-    if audit_address.is_address_number_element(element):
+    elif audit_address.is_address_number_element(element):
         number, housename = audit_address.clean_address_number(element.attrib['v'])
         if number:
             address_node["number"] = number
         if housename:
             address_node["housename"] = housename
-    if audit_address.is_suburb_element(element):
-        address_node["suburb"] = element.attrib['v']
+    elif audit_address.is_suburb_element(element):
+        address_node["suburb"] = audit_address.process_suburb_name(element.attrib['v'])
+    else:
+        address_node[element.attrib['k']] = element.attrib['v']
     return address_node
 
 def convert_contact_tag_element(tag_element, contact_node):
@@ -89,9 +107,9 @@ def convert_member_element(element):
 def get_creation_information(element):
     """ Extract creation information from OSM element """
     created = {}
-    for tag in CREATED_TAGS:
-        if tag in element.attrib:
-            created[tag] = element.attrib[tag]
+    for attrib in CREATED_ATTRIBS:
+        if attrib in element.attrib:
+            created[attrib] = element.attrib[attrib]
     return created
 
 def convert_tag_element(element, node):
@@ -105,7 +123,7 @@ def convert_tag_element(element, node):
                 node["address"] = {}
             node["address"] = convert_address_tag_element(tag_element,node["address"])
         #Convert contact data
-        if tag_element.attrib['k'] in audit_contact.valid_contact_tag:
+        if tag_element.attrib['k'] in audit_contact.VALID_CONTACT_TAG:
             if "contact" not in node:
                 node["contact"] = {}
             node["contact"] = convert_contact_tag_element(tag_element, node["contact"])
