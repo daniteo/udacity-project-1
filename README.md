@@ -141,9 +141,9 @@ Uma outra entrada encontrada era a presença de listas de telefones no lugar de 
 ### Arquivos utilizados
 
 1. bh_map.osm - Arquivo OSM com os dados da cidade de Belo Horizonte - Tamanho: 67MB
-2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 
-3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 
-4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 
+2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 71MB
+3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 19MB
+4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 1MB
 
 ### Quantidade de elementos importados para o MongoDB
 
@@ -252,7 +252,7 @@ Resultado:
 
 Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação a quantidade de bares e cervejarias artesanais de Belo Horizonte.
 
-### Número de areas de lazer por tipo:
+### 10 maiores areas de lazer por tipo:
 
 ```
 > db.bh.aggregate([
@@ -263,7 +263,9 @@ Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados 
         "_id":"$leisure",
         "count":{"$sum":1}
     }},
-    {"$sort":{"count":-1}}])
+    {"$sort":{"count":-1}},
+    {"$limit":10}
+])
 ```
 Resultado:
 ```
@@ -277,18 +279,9 @@ Resultado:
 { "_id" : "playground", "count" : 16 }
 { "_id" : "fitness_centre", "count" : 12 }
 { "_id" : "dance", "count" : 9 }
-{ "_id" : "nature_reserve", "count" : 8 }
-{ "_id" : "track", "count" : 7 }
-{ "_id" : "yes", "count" : 5 }
-{ "_id" : "common", "count" : 4 }
-{ "_id" : "fitness_station", "count" : 2 }
-{ "_id" : "horse_riding", "count" : 2 }
-{ "_id" : "water_park", "count" : 2 }
-{ "_id" : "bandstand", "count" : 1 }
-{ "_id" : "museum", "count" : 1 }
 ```
 
-### Top 5 espaço de prática de esportes, por tipo:
+### 5 principais espaço de prática de esportes, por tipo:
 
 ```
 > db.bh.aggregate([
@@ -313,6 +306,8 @@ Resultado:
 { "_id" : "swimming", "count" : 24 }
 { "_id" : "volleyball", "count" : 19 }
 ```
-
 ## Conclusão
 
+Com a realização da analise de dados deste trabalho, percebe-se que as informações registrada para a área de Belo Horizonte está bem defasada. Vemos também que existem um aumento nas contribuições em datas mais recentes, mas ainda concentrada em sua grande parte na mão de poucos usuários.
+
+Para o efeito do exercício proposto, acredito que o tratamento de dados foi bem realizado, com uma limpeza das informações e boa consitência dos dados convertidos.
