@@ -65,18 +65,20 @@ STREET_TYPE_MAPPING_ADD = {
 CITY_NAME_IN_BELOHORIZONTE_AREA = ["Belo Horizonte",
                                    "Contagem",
                                    "Nova Lima",
-                                   "Ribeirão das Neves",
+                                   "Ribeirão Das Neves",
                                    "Santa Luzia",
-                                   "Sabará"]
+                                   "Sabará",
+                                   "Ibirité",
+                                   "Betim"]
 
 #City name that should be replaced from OSM to JSON file
 #in order to keep consistency between data. This mapping 
 #deal with names typed wrong or abbreviations
 CITY_NAME_MAPPING = {
-    "bh" : "Belo Horizonte",
-    "Belo Horizonte/MG" : "Belo Horizonte",
-    "Belo Horizonte - MG" : "Belo Horizonte",
-    "Belo Horizonte MG Brazil" : "Belo Horizonte"
+    "Bh" : "Belo Horizonte",
+    "Belo Horizonte/Mg" : "Belo Horizonte",
+    "Belo Horizonte - Mg" : "Belo Horizonte",
+    "Belo Horizonte Mg Brazil" : "Belo Horizonte"
 }
 
 #Suburb name that should be replaced from OSM to JSON file
@@ -122,15 +124,21 @@ def process_suburb_name(suburb):
     """
     if suburb in SUBURB_NAME_MAPPING:
         suburb = SUBURB_NAME_MAPPING[suburb]
-    return suburb.title()
+        suburb = suburb.title()
+        #Exclude suburb names record with city names
+        if suburb in CITY_NAME_IN_BELOHORIZONTE_AREA:
+            return None
+        else:
+            return suburb
 
 def audit_suburb_name(suburb):
     """
     Audit suburb name, logging in SUBURB_NAME_LIST strutcture after cleaning
     """
     suburb = process_suburb_name(suburb)
-    if suburb.title() not in SUBURB_NAME_LIST:
-        SUBURB_NAME_LIST.append(suburb.title())
+    if suburb:
+        if suburb.title() not in SUBURB_NAME_LIST:
+            SUBURB_NAME_LIST.append(suburb.title())
 
 #Address number audit
 def clean_address_number(number):
