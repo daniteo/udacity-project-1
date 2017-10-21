@@ -222,7 +222,7 @@ Resultado:
 
 ## Outras Idéias
 
-###Cervejarias Artesanais (microbrewery)
+### Cervejarias Artesanais (microbrewery)
 
 >“Minas não tem mar, mas tem bar.”
 
@@ -230,7 +230,7 @@ Belo Horizonte é conhecida pela sua fama de ser uma cidade boêmia, apresentand
 
 Desta forma decidi fazer uma pesquisa na base de dados do **Open Street Map**, com intuíto de verificar sua completude:
 
-####Quantidade de cervejarias artesanais
+#### Quantidade de cervejarias artesanais
 
 ```
 db.bh.find({ "microbrewery" : { "$exists":1 } }).count()
@@ -242,7 +242,7 @@ Resultado:
 2
 ```
 
-####Quantidade de bares
+#### Quantidade de bares
 
 ```
 db.bh.find( { "amenity" : {"$exists":1}, "amenity" : "bar"} ).count()
