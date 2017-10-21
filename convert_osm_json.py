@@ -29,12 +29,15 @@ KEYS_TO_CONVERT = ["amenity",
                    "cuisine",
                    "highway",
                    "area",
+                   "sport",
+                   "sport_1",
+                   "sport_2",
                    "microbrewery",
                    "type"]
 
 def convert_address_tag_element(element, address_node):
     """
-    Verify and convert address data from OSM file to JSON structure
+    Verify and convert address data from OSM file to JSON structure, using audit_address.py script
     """
     if audit_address.is_street_element(element):
         street_type, street_name = audit_address.process_steet_type_and_name(element.attrib['v'])
@@ -53,14 +56,16 @@ def convert_address_tag_element(element, address_node):
         if housename:
             address_node["housename"] = housename
     elif audit_address.is_suburb_element(element):
-        address_node["suburb"] = audit_address.process_suburb_name(element.attrib['v'])
+        suburb = audit_address.process_suburb_name(element.attrib['v'])
+        if suburb:
+            address_node["suburb"] = suburb
     else:
         address_node[element.attrib['k']] = element.attrib['v']
     return address_node
 
 def convert_contact_tag_element(tag_element, contact_node):
     """
-    Verify and convert contact data from OSM file to JSON structure
+    Verify and convert contact data from OSM file to JSON structure, using audit_contact.py script
     """
     if audit_contact.is_phone_element(tag_element):
         phone = audit_contact.process_phone_number(tag_element.attrib['v'])
@@ -121,7 +126,7 @@ def convert_tag_element(element, node):
         if tag_element.attrib['k'] in audit_address.VALID_ADDRESS_TAG:
             if "address" not in node:
                 node["address"] = {}
-            node["address"] = convert_address_tag_element(tag_element,node["address"])
+            node["address"] = convert_address_tag_element(tag_element, node["address"])
         #Convert contact data
         if tag_element.attrib['k'] in audit_contact.VALID_CONTACT_TAG:
             if "contact" not in node:
@@ -129,10 +134,33 @@ def convert_tag_element(element, node):
             node["contact"] = convert_contact_tag_element(tag_element, node["contact"])
         #Convert other tags
         if tag_element.attrib['k'] in KEYS_TO_CONVERT:
-            node[tag_element.attrib['k']] = tag_element.attrib['v']
-    
+            if (tag_element.attrib['k'].startswith("sport")):
+                if "sport" not in node:
+                    node["sport"] = [] 
+                node["sport"] = convert_sports(tag_element.attrib['v'], node["sport"])
+            else:
+                node[tag_element.attrib['k']] = tag_element.attrib['v']
     return node
-    
+
+def convert_sports(sport_name, sports_list):
+    """
+    Convert data in sports tag.
+    Sports can be registered as list separated by semicolon or colon
+    If there is a sports already record, the new sport is appended to list
+    """
+    if sport_name.find(";") > -1:
+        sport_list_temp = sport_name.split(";")
+    elif sport_name.find(",") > -1:
+        sport_list_temp = sport_name.split(",")
+    else:
+        sport_list_temp = [sport_name]
+
+    for sport in sport_list_temp:
+        sport = sport.strip()
+        if sport not in sports_list:
+            sports_list.append(sport)
+
+    return sports_list
 
 def convert_element(element):
     """ Convert OSM element to JSON """
