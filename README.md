@@ -235,9 +235,7 @@ Desta forma decidi fazer uma pesquisa na base de dados do **Open Street Map**, c
 ```
 db.bh.find({ "microbrewery" : { "$exists":1 } }).count()
 ```
-
 Resultado:
-
 ```
 2
 ```
@@ -248,12 +246,11 @@ Resultado:
 db.bh.find( { "amenity" : {"$exists":1}, "amenity" : "bar"} ).count()
 ```
 Resultado:
-
 ```
 139
 ```
 
-Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação ao dados de dados e cervejarias artesanais de Belo Horizonte.
+Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação a quantidade de bares e cervejarias artesanais de Belo Horizonte.
 
 ### Número de areas de lazer por tipo:
 
@@ -268,7 +265,7 @@ Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados 
     }},
     {"$sort":{"count":-1}}])
 ```
-Resultado
+Resultado:
 ```
 { "_id" : "park", "count" : 576 }
 { "_id" : "pitch", "count" : 339 }
