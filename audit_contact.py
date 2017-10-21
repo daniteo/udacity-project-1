@@ -6,13 +6,21 @@ import re
 
 OSM_FILE = "bh_map.osm"
 
-valid_contact_tag = ["contact:phone", "phone", "contact:email", "email", "contact:website", "website"]
+#Contact tags to be converted from OSM file
+VALID_CONTACT_TAG = ["contact:phone",
+                     "phone",
+                     "contact:email",
+                     "email",
+                     "contact:website",
+                     "website"]
 
+#Regular expressions used to validate contact data
 PHONENUMBER_RE = re.compile(r'\+?[5]{0,2} *.?31.? *(9?[0-9]{4}[\- ]?[0-9]{4})$')
 PHONENUMBER_ONLYNUMBER_RE = re.compile(r'(9?[0-9]{4}[\- ]?[0-9]{4}$)')
 EMAIL_RE = re.compile(r'^\S+@\S+\.\w+\.?\w?')
 SITE_RE = re.compile(r'^(https?://|w{3}\.|[A-Za-z0-9]+\.)')
 
+#Structructure used for audit, storing invalid data in OSM fila
 INVALID_PHONE_NUMBER_LIST = []
 INVALID_EMAIL_LIST = []
 INVALID_WEBSITE_LIST = []
