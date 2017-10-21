@@ -5,9 +5,13 @@
 
 Belo Horizonte - Minas Gerais - Brasil
 
-Download do OSM: [Overpass API](http://overpass-api.de/api/map?bbox=-44.0758,-20.0282,-43.8258,-19.7493)
+Download do OSM: [Overpass API](http://overpass-api.de/api/map?bbox=-43.808,-20.0843,-44.1197,-19.7829)
 
-Escolhi a cidade de Belo Horizonte para analise de dados por ser a minha cidade natal. Por esta razão está é uma cidade que tenho um grande conhecimento, permitindo que eu realize uma análise mais crítica dos seus dados.
+Para este projeto foi escolhida a cidade de Belo Horizonte para analise de dados, mais precisamente a Região Metropolitana de Belo Horizonte, que inclui também outras cidades como Betim, Contagem, Ibirité, Nova Lima, Santa Luzia e Sabará. Por ser a minha cidade natal, esta é uma região da qual tenho um grande conhecimento, permitindo que eu realize uma análise mais crítica dos seus dados. Os scripts utilizados para esta analise foram os seguintes:
+
+- convert\_osm\_json.py: responsável pela leitura do arquivo OSM e gravação do JSON
+- audit\_address.py: responsável pela validação dos dados de endereço
+- audit\_contact.py: responsável pela validação dos dados de contato
 
 ## Problemas Encontrados no Mapa
 
@@ -136,7 +140,7 @@ Uma outra entrada encontrada era a presença de listas de telefones no lugar de 
 
 ### Arquivos utilizados
 
-1. bh_map.osm - Arquivo OSM com os dados da cidade de Belo Horizonte - Tamanho: 60MB
+1. bh_map.osm - Arquivo OSM com os dados da cidade de Belo Horizonte - Tamanho: 67MB
 2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 
 3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 
 4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 
@@ -148,21 +152,21 @@ Uma outra entrada encontrada era a presença de listas de telefones no lugar de 
 ```
 db.bh.find({"data_type":"node"}).count()
 ```
-> *253333*
+> *287113*
 
 #### Way
 
 ```
 db.bh.find({"data_type":"way"}).count()
 ```
-> *48511*
+> *51785*
 
 #### Relation
 
 ```
 db.bh.find({"data_type":"relation"}).count()
 ```
-> *2001*
+> *2179*
 
 ### Colaborações
 
@@ -181,16 +185,16 @@ db.bh.find({"data_type":"relation"}).count()
 
 Resultado:
 ```
-{ "_id" : "Vítor Dias", "count" : 85303 }
-{ "_id" : "patodiez", "count" : 32240 }
-{ "_id" : "Gerald Weber", "count" : 26235 }
-{ "_id" : "lmpinto", "count" : 18176 }
-{ "_id" : "BladeTC", "count" : 15498 }
-{ "_id" : "andrellym", "count" : 13723 }
-{ "_id" : "Samuel Vale", "count" : 9356 }
-{ "_id" : "Djavan Fagundes", "count" : 7418 }
-{ "_id" : "Danilo C", "count" : 5846 }
-{ "_id" : "ftrebien", "count" : 5408 }
+{ "_id" : "Vítor Dias", "count" : 87428 }
+{ "_id" : "patodiez", "count" : 34207 }
+{ "_id" : "Gerald Weber", "count" : 31668 }
+{ "_id" : "BladeTC", "count" : 24503 }
+{ "_id" : "lmpinto", "count" : 16849 }
+{ "_id" : "andrellym", "count" : 14970 }
+{ "_id" : "Samuel Vale", "count" : 10393 }
+{ "_id" : "Djavan Fagundes", "count" : 7861 }
+{ "_id" : "Vítor Dias - importação de dados", "count" : 7269 }
+{ "_id" : "Tebeling", "count" : 5972 }
 ```
 #### Quantidade de contribuições por ano
 
@@ -203,20 +207,115 @@ Resultado:
 ```
 Resultado:
 ```
-{ "_id" : "2017", "count" : 83841 }
-{ "_id" : "2013", "count" : 73387 }
-{ "_id" : "2015", "count" : 37471 }
-{ "_id" : "2014", "count" : 26880 }
-{ "_id" : "2012", "count" : 23339 }
-{ "_id" : "2016", "count" : 16642 }
-{ "_id" : "2011", "count" : 13852 }
-{ "_id" : "2008", "count" : 12517 }
-{ "_id" : "2009", "count" : 6434 }
-{ "_id" : "2007", "count" : 5070 }
-{ "_id" : "2010", "count" : 4412 }
+{ "_id" : "2017", "count" : 105214 }
+{ "_id" : "2013", "count" : 75278 }
+{ "_id" : "2015", "count" : 43580 }
+{ "_id" : "2014", "count" : 30257 }
+{ "_id" : "2012", "count" : 24775 }
+{ "_id" : "2016", "count" : 19093 }
+{ "_id" : "2011", "count" : 14829 }
+{ "_id" : "2008", "count" : 10807 }
+{ "_id" : "2009", "count" : 7597 }
+{ "_id" : "2007", "count" : 5208 }
+{ "_id" : "2010", "count" : 4439 }
 ```
 
 ## Outras Idéias
+
+###Cervejarias Artesanais (microbrewery)
+
+>“Minas não tem mar, mas tem bar.”
+
+Belo Horizonte é conhecida pela sua fama de ser uma cidade boêmia, apresentando também uma grande vocação na fabricação de cervejas artesanais, como se pode ver nesta [matéria do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) e neste [artigo do Melhores Destinos](https://guia.melhoresdestinos.com.br/noite-de-belo-horizonte-203-2580-p.html).
+
+Desta forma decidi fazer uma pesquisa na base de dados do **Open Street Map**, com intuíto de verificar sua completude:
+
+####Quantidade de cervejarias artesanais
+
+```
+db.bh.find({ "microbrewery" : { "$exists":1 } }).count()
+```
+
+Resultado:
+
+```
+2
+```
+
+####Quantidade de bares
+
+```
+db.bh.find( { "amenity" : {"$exists":1}, "amenity" : "bar"} ).count()
+```
+Resultado:
+
+```
+139
+```
+
+Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação ao dados de dados e cervejarias artesanais de Belo Horizonte.
+
+### Número de areas de lazer por tipo:
+
+```
+> db.bh.aggregate([
+    {"$match":{
+        "leisure":{"$exists":1}
+    }},
+    {"$group":{
+        "_id":"$leisure",
+        "count":{"$sum":1}
+    }},
+    {"$sort":{"count":-1}}])
+```
+Resultado
+```
+{ "_id" : "park", "count" : 576 }
+{ "_id" : "pitch", "count" : 339 }
+{ "_id" : "sports_centre", "count" : 163 }
+{ "_id" : "swimming_pool", "count" : 116 }
+{ "_id" : "garden", "count" : 77 }
+{ "_id" : "recreation_ground", "count" : 31 }
+{ "_id" : "stadium", "count" : 28 }
+{ "_id" : "playground", "count" : 16 }
+{ "_id" : "fitness_centre", "count" : 12 }
+{ "_id" : "dance", "count" : 9 }
+{ "_id" : "nature_reserve", "count" : 8 }
+{ "_id" : "track", "count" : 7 }
+{ "_id" : "yes", "count" : 5 }
+{ "_id" : "common", "count" : 4 }
+{ "_id" : "fitness_station", "count" : 2 }
+{ "_id" : "horse_riding", "count" : 2 }
+{ "_id" : "water_park", "count" : 2 }
+{ "_id" : "bandstand", "count" : 1 }
+{ "_id" : "museum", "count" : 1 }
+```
+
+### Top 5 espaço de prática de esportes, por tipo:
+
+```
+> db.bh.aggregate([
+    {"$match":{
+        "sport":{"$exists":1},
+        "leisure":{"$exists":1}
+    }},
+    {"$unwind":"$sport"},
+    {"$group":{
+        "_id":"$sport",
+        "count":{"$sum":1}
+    }},
+    {"$sort":{"count":-1}},
+    {"$limit":5}
+    ])
+```
+Resultado:
+```
+{ "_id" : "soccer", "count" : 237 }
+{ "_id" : "multi", "count" : 53 }
+{ "_id" : "tennis", "count" : 26 }
+{ "_id" : "swimming", "count" : 24 }
+{ "_id" : "volleyball", "count" : 19 }
+```
 
 ## Conclusão
 
