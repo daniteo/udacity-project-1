@@ -47,7 +47,7 @@ street_type_mapping_add = {
     "Paraíba": "Rua",
     "Montes": "Rua",
     "Contorno": "Avenida",
-    "Pium-i": "Rua",
+    "Pium": "Rua",
     "Riachuelo": "Rua",
     "São" : "Rua"
 }
@@ -140,10 +140,12 @@ Uma outra entrada encontrada era a presença de listas de telefones no lugar de 
 
 ### Arquivos utilizados
 
+```
 1. bh_map.osm - Arquivo OSM com os dados da cidade de Belo Horizonte - Tamanho: 67MB
 2. bh_node.json - Arquivo JSON com elementos *node* a serem importados para o MongoDB - Tamanho: 71MB
 3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 19MB
 4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 1MB
+```
 
 ### Quantidade de elementos importados para o MongoDB
 
@@ -250,7 +252,9 @@ Resultado:
 139
 ```
 
-Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação a quantidade de bares e cervejarias artesanais de Belo Horizonte.
+Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados registrados em relação a quantidade de bares e cervejarias artesanais de Belo Horizonte. 
+
+A fama boêmia de Belo Horizonte é vista como um dos atrativos turísticos para a cidade e desta forma poderia haver um esforço da Prefeitura de BH para atualização deste e disponibilização das informações como roteiro de noite de BH. Muito provavelmente estas informações já existem em base de dados de estatísticas da cidade e precisariam apenas de ser tratados e registrados no Open Street Map.
 
 ### 10 maiores areas de lazer por tipo:
 
@@ -310,4 +314,4 @@ Resultado:
 
 Com a realização da analise de dados deste trabalho, percebe-se que as informações registrada para a área de Belo Horizonte está bem defasada. Vemos também que existem um aumento nas contribuições em datas mais recentes, mas ainda concentrada em sua grande parte na mão de poucos usuários.
 
-Para o efeito do exercício proposto, acredito que o tratamento de dados foi bem realizado, com uma limpeza das informações e boa consitência dos dados convertidos.
+Para o efeito do exercício proposto, acredito que o tratamento de dados foi bem realizado, com uma limpeza das informações e boa consitência dos dados convertidos. Com a diferentes fontes de entrada de informações, foram encontradas várias divergencias nos dados, os quais foram devidamente tratados.
