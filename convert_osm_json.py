@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """
 Prepare the OSM file from Belo Horizonte to a JSON format to be imported to MongoDB
 """
