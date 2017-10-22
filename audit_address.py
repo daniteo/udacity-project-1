@@ -16,7 +16,7 @@ VALID_ADDRESS_TAG = ["addr:street",
                      "addr:suburb"]
 
 #Regex used to validate address data
-STREET_TYPE_RE = re.compile(r'^[A-ZÀ-Ú]+((\.?\b)|\.)', re.IGNORECASE)
+STREET_TYPE_RE = re.compile(r'^(?P<type>\w+\b)', re.IGNORECASE)
 ZIPCODE_RE = re.compile(r'^3[0-9]{4}\-[0-9]{3}')
 ADDRESS_NUMBER_RE = re.compile(r'^[0-9]+')
 ADDRESS_NUMBER_WITH_NAME_RE = re.compile(r'^([0-9]+) ?[, \-/]? ?([A-Z0-9 º]+)', re.IGNORECASE)
@@ -36,12 +36,13 @@ VALID_STREET_TYPE = ["Alameda", "Avenida", "Praça", "Rodovia", "Rua", "Anel", "
 #in order to keep consistency between data. This mapping 
 #deal with names typed wrong or abbreviations
 STREET_TYPE_MAPPING_REPLACE = {
+    "Av." : "Avenida",
     "Av" : "Avenida",
     "Avendia" : "Avenida",
     "Anél" : "Anel",
     "Avenid" : "Avenida",
     "Eua" : "Rua",
-    "Alamedas": "Alameda"
+    "Alamedas": "Alameda",
 }
 
 #Street type that should be added to the street name from OSM to JSON file
@@ -56,6 +57,7 @@ STREET_TYPE_MAPPING_ADD = {
     "Montes": "Rua",
     "Contorno": "Avenida",
     "Pium": "Rua",
+    "Pirité": "Rua",
     "Riachuelo": "Rua",
     "São" : "Rua"
 }
@@ -98,13 +100,17 @@ def process_steet_type_and_name(street_name):
     street_type = ""
     match = STREET_TYPE_RE.search(street_name)
     if match:
-        street_type = match.group()
+        street_type = match.group("type")
         if street_type in STREET_TYPE_MAPPING_REPLACE:
             street_name = street_name.replace(street_type, STREET_TYPE_MAPPING_REPLACE[street_type])
-            street_type = STREET_TYPE_MAPPING_REPLACE[street_type]
+            street_type = STREET_TYPE_MAPPING_REPLACE[street_type].strip()
         elif street_type in STREET_TYPE_MAPPING_ADD:
             street_type = STREET_TYPE_MAPPING_ADD[street_type]
             street_name = street_type+" "+street_name
+        street_name = street_name.replace(". "," ")
+        #Clean street name with fulladrress typed
+        if street_name.find(",") > 0:
+            street_name = street_name.split(",")[0]
     return street_type, street_name
 
 def audit_steet_type_and_name(street_name):
@@ -124,12 +130,12 @@ def process_suburb_name(suburb):
     """
     if suburb in SUBURB_NAME_MAPPING:
         suburb = SUBURB_NAME_MAPPING[suburb]
-        suburb = suburb.title()
-        #Exclude suburb names record with city names
-        if suburb in CITY_NAME_IN_BELOHORIZONTE_AREA:
-            return None
-        else:
-            return suburb
+    suburb = suburb.title()
+    #Exclude suburb names record with city names
+    if suburb in CITY_NAME_IN_BELOHORIZONTE_AREA:
+        return None
+    else:
+        return suburb
 
 def audit_suburb_name(suburb):
     """
