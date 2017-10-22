@@ -48,6 +48,7 @@ street_type_mapping_add = {
     "Montes": "Rua",
     "Contorno": "Avenida",
     "Pium": "Rua",
+    "Pirité": "Rua",
     "Riachuelo": "Rua",
     "São" : "Rua"
 }
