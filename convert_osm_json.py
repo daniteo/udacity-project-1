@@ -46,8 +46,10 @@ def convert_address_tag_element(element, address_node):
     """
     if audit_address.is_street_element(element):
         street_type, street_name = audit_address.process_steet_type_and_name(element.attrib['v'])
-        address_node["street_type"] = street_type
-        address_node["street"] = street_name
+        if street_type:
+            address_node["street_type"] = street_type
+        if street_name:
+            address_node["street"] = street_name
     elif audit_address.is_city_element(element):
         address_node["city"] = audit_address.city_name_cleaning(element.attrib['v'])
     elif audit_address.is_zipcode_element(element):
