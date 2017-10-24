@@ -266,7 +266,33 @@ A atualização dessas informações poderia ser realizada a partir de base de d
 
 Dentre os sites especializados, pode-se avaliar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias cervejárias, com dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
 
-Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejaris. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto.
+Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejaris. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto. Abaixo uma amostra da estrutura do arquivo:
+
+```xml
+<Placemark>
+<name>Krug Bier</name>
+<address>Rua Alaska, 115A - Jardim Canadá - Nova Lima</address>
+<description><![CDATA[<img src="https://lh4.googleusercontent.com/ZO3rnobqqF1HfS6aaFAEwOwOgS-l_Jq7nrpEp8bhxDcHJNB_XvaZuJL7_qRWlmDghPd3onV9eXgIlS3NFCBx2ZejzNBsIyIhA9zbrDTTdF67e6QDUFeJL_VdQIO3CAl18w" height="200" width="auto" /><br><br>DESCRIÇÃO: Todos os sábados, há um tour guiado, das 10h às 12h, para conhecer o processo de produção e degustar os chopes artesanais na fonte.<br>ENDEREÇO: Rua Alaska, 115A - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3507-0777<br>SAIBA MAIS: https://www.facebook.com/KrugBier/?fref=ts]]></description>
+<styleUrl>#icon-1899-DB4436</styleUrl>
+<ExtendedData>
+    <Data name="DESCRIÇÃO">
+    <value>Todos os sábados, há um tour guiado, das 10h às 12h, para conhecer o processo de produção e degustar os chopes artesanais na fonte.</value>
+    </Data>
+    <Data name="ENDEREÇO">
+    <value>Rua Alaska, 115A - Jardim Canadá - Nova Lima</value>
+    </Data>
+    <Data name="TELEFONE">
+    <value>(31) 3507-0777</value>
+    </Data>
+    <Data name="SAIBA MAIS">
+    <value>https://www.facebook.com/KrugBier/?fref=ts</value>
+    </Data>
+    <Data name="gx_media_links">
+    <value>https://lh4.googleusercontent.com/ZO3rnobqqF1HfS6aaFAEwOwOgS-l_Jq7nrpEp8bhxDcHJNB_XvaZuJL7_qRWlmDghPd3onV9eXgIlS3NFCBx2ZejzNBsIyIhA9zbrDTTdF67e6QDUFeJL_VdQIO3CAl18w</value>
+    </Data>
+</ExtendedData>
+</Placemark>
+```
 
 Para esta solução, alguns pontos devem ser considerados:
 
