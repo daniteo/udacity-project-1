@@ -385,7 +385,7 @@ Resultado:
 { "_id" : "volleyball", "count" : 19 }
 ```
 
-#### Principais 
+#### Principais tipos de cozinha
 
 ```
 > db.bh.aggregate([
@@ -397,11 +397,41 @@ Resultado:
         "count":{"$sum":1}
     }},
     {"$sort":{"count":-1}},
-    {"$limit":10}
+    {"$limit":5}
 ])
 ```
 Resultado:
 ```
+{ "_id" : "regional", "count" : 67 }
+{ "_id" : "pizza", "count" : 43 }
+{ "_id" : "burger", "count" : 25 }
+{ "_id" : "italian", "count" : 20 }
+{ "_id" : "sandwich", "count" : 10 }
+```
+
+#### Bancos com maior número de agências
+
+```
+> db.bh.aggregate(
+    [{"$match":{
+        "amenity":"bank",
+        "name":{"$exists":1}}
+    },
+    {"$group":{
+        "_id":"$name",
+        "count":{"$sum":1}}
+    },
+    {"$sort":{"count":-1}},
+    {"$limit":5}
+])
+```
+Resultados:
+```
+{ "_id" : "Banco do Brasil", "count" : 39 }
+{ "_id" : "Itaú", "count" : 33 }
+{ "_id" : "Bradesco", "count" : 29 }
+{ "_id" : "Santander", "count" : 28 }
+{ "_id" : "Caixa Econômica Federal", "count" : 18 }
 ```
 
 ## Conclusão
