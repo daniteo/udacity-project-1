@@ -301,6 +301,11 @@ Para esta solução, alguns pontos devem ser considerados:
 - Seria necessária um tratamento dos endereços registrados para que o mesmo seja armazenado de forma estruturada, com separação dos componentes do endereço (tipo de rua, rua, numero, complemento, bairro e cidade)
 - É necessário identificar se a cervejaria não está realmente cadastrada no OSM antes de inserir um novo node com as informações corretas.
 
+Benefícios:
+
+- Com as informações sendo originadas de uma base única, seria possível manter uma grande consistência dos dados cadatrados.
+- Como existem associações nacionais de cervejarias, este método poderia ser utilizado para que a base de dados destas entidades seja utilizada como fonte de dados, gerando uma base nacional e com informações confiáveis.
+
 #### 2) Google Maps
 
 Para o Google Maps, poderiamos fazer uso da sua API para a realizar a pesquisa dos dados referentes a cervejarias em BH e realizar a inserção dos **nodes** a partir da API do **Open Street Map**. Pontos a serem considerados:
@@ -309,7 +314,19 @@ Para o Google Maps, poderiamos fazer uso da sua API para a realizar a pesquisa d
 - Da mesma forma que apresentado no item anterior, os daods de endereço não estão estruturados, sendo necessário a extração das informações da forma já definida para o conjunto de dados do OSM. 
 - É necessário identificar se a cervejaria não está realmente cadastrada no OSM antes de inserir um novo node com as informações corretas.
 
-Como exemplo de um dos itens propostos, criei um script para a leitura do arquivo .KML disponível no [artigo citado](#artigo) anteriormente a a geração do [XML para o Open Street Map](http://wiki.openstreetmap.org/wiki/API_v0.6#Create:_PUT_.2Fapi.2F0.6.2F.5Bnode.7Cway.7Crelation.5D.2Fcreate) a partir do seu conteúdo. O script está disponível no arquivo `kml_data_extract.py`. Este script faz a lieutra do nome e endereço da cervejaria presente na estutura do KML e busca as coordenadas referentes a estes dados usando a [API Google Maps](https://developers.google.com/places/web-service/search?hl=pt-br).
+Benefícios
+
+- Esta solução permitiria a utilização de uma base de dados bem ampla e consolidada, como a do Google Maps, para alimentar as regiões do Open Street Map.
+- Todas as informações do Google Maps já tem as coordenadas necessárias para a localização do pontos adicionados.
+- É possível se beneficiar das diversas informações já disponíveis, como descrição, contatos, horários de funcionamento, entre outras.
+
+Como exemplo de um dos itens propostos, criei um script básico para a leitura do arquivo .KML disponível no [artigo citado](#artigo) anteriormente a a geração do [XML para o Open Street Map](http://wiki.openstreetmap.org/wiki/API_v0.6#Create:_PUT_.2Fapi.2F0.6.2F.5Bnode.7Cway.7Crelation.5D.2Fcreate) a partir do seu conteúdo. O script está disponível no arquivo `kml_data_extract.py`. Este script faz a leitura do nome e endereço da cervejaria presente na estutura do KML e busca as coordenadas referentes a estes dados usando a [API Google Maps](https://developers.google.com/places/web-service/search?hl=pt-br). 
+
+O objetivo deste script é mostrar a possibilidade de integração de informações externas para integração com o Open Street Map e por este motivo faz apenas um tratamento basico dos dados, necessitando uma analise mais apurada para limpeza e consistencia das informações. 
+
+O resultado do script é um arquivo `cervejaria.xml` com o XML para utilização com a API do OpenStreetMap.
+
+Para a utilização do script é necessária uma API KEY do Google Maps. Esta chave deve estar armazenada em um arquivo chamado API_KEY_GMAPS, no mesmo diretório do script.
 
 ### Pesquisas Adicionais
 
