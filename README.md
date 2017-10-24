@@ -147,25 +147,21 @@ Uma outra entrada encontrada era a presença de listas de telefones no lugar de 
 3. bh_way.json - Arquivo JSON com elementos *way* a serem importados para o MongoDB - Tamanho: 19MB
 4. bh_relation.json - Arquivo JSON com elementos *realtion* a serem importados para o MongoDB - Tamanho: 1MB
 ```
-
 ### Quantidade de elementos importados para o MongoDB
 
 #### Node
-
 ```
 db.bh.find({"data_type":"node"}).count()
 ```
 > *287113*
 
 #### Way
-
 ```
 db.bh.find({"data_type":"way"}).count()
 ```
 > *51785*
 
 #### Relation
-
 ```
 db.bh.find({"data_type":"relation"}).count()
 ```
@@ -262,9 +258,13 @@ A atualização dessas informações poderia ser realizada a partir de base de d
 1) artigos e/ou sites especializados sobre cerveja artesanal
 2) dados do Google Maps
 
-#### 1) Artidos/Sites Especilizados
+#### 1) Artigos/Sites Especilizados
 
-Dentre os sites especializados, pode-se avaliar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias cervejárias, com dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
+_Sites_
+
+Dentre os sites especializados, pode-se avaliar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias cervejarias, com dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
+
+_<a name="artigo">Artigos</a>_
 
 Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejaris. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto. Abaixo uma amostra da estrutura do arquivo:
 
@@ -299,14 +299,17 @@ Para esta solução, alguns pontos devem ser considerados:
 - Por não se tratar de um site oficial, é necessário verificar a confiabilidade das informações cadastradas
 - Como não existe informação de localização, seria necessário um integração com a API do Google Maps, a partir do endereço cadastrado, para identificação de longitude e latitude.
 - Seria necessária um tratamento dos endereços registrados para que o mesmo seja armazenado de forma estruturada, com separação dos componentes do endereço (tipo de rua, rua, numero, complemento, bairro e cidade)
+- É necessário identificar se a cervejaria não está realmente cadastrada no OSM antes de inserir um novo node com as informações corretas.
 
 #### 2) Google Maps
 
 Para o Google Maps, poderiamos fazer uso da sua API para a realizar a pesquisa dos dados referentes a cervejarias em BH e realizar a inserção dos **nodes** a partir da API do **Open Street Map**. Pontos a serem considerados:
 
 - Não foi possível encontrar no Google Maps um estrutura de dado que identifique as cervejas artesanais na região pesquisada. Assim, não há garantias que a query de busca utilizadas retorne apenas fabricas de cervejas artesanais na região.
-
 - Da mesma forma que apresentado no item anterior, os daods de endereço não estão estruturados, sendo necessário a extração das informações da forma já definida para o conjunto de dados do OSM. 
+- É necessário identificar se a cervejaria não está realmente cadastrada no OSM antes de inserir um novo node com as informações corretas.
+
+Como exemplo de um dos itens propostos, criei um script para a leitura do arquivo .KML disponível no [artigo citado](#artigo) anteriormente a a geração do [XML para o Open Street Map](http://wiki.openstreetmap.org/wiki/API_v0.6#Create:_PUT_.2Fapi.2F0.6.2F.5Bnode.7Cway.7Crelation.5D.2Fcreate) a partir do seu conteúdo. O script está disponível no arquivo `kml_data_extract.py`. Este script faz a lieutra do nome e endereço da cervejaria presente na estutura do KML e busca as coordenadas referentes a estes dados usando a [API Google Maps](https://developers.google.com/places/web-service/search?hl=pt-br).
 
 ### Pesquisas Adicionais
 
