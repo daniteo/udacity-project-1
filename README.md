@@ -253,20 +253,20 @@ Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados 
 
 A fama boêmia de Belo Horizonte é vista como um dos atrativos turísticos para a cidade e desta forma poderia haver um esforço da Prefeitura de BH para atualização deste e disponibilização das informações como roteiro de noite de BH. Muito provavelmente estas informações já existem em base de dados de estatísticas da cidade e precisariam apenas de ser tratados e registrados no Open Street Map.
 
-A atualização dessas informações poderia ser realizada a partir de base de dados já existentes a partir das seguintes fontes:
+A atualização dessas informações poderia ser realizada a partir de base de dados já existentes, provenientes das seguintes fontes:
 
 1) artigos e/ou sites especializados sobre cerveja artesanal
 2) dados do Google Maps
 
-#### 1) Artigos/Sites Especilizados
+#### 1) Artigos/Sites Especializados
 
 _Sites_
 
-Dentre os sites especializados, pode-se avaliar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias cervejarias, com dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
+Dentre os sites especializados, pode-se identificar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias informações como dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
 
 _<a name="artigo">Artigos</a>_
 
-Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejaris. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto. Abaixo uma amostra da estrutura do arquivo:
+Outra fonte de dados encontrada estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejarias de MG. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto. Abaixo uma amostra de sua estrutura:
 
 ```xml
 <Placemark>
@@ -296,8 +296,8 @@ Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas]
 
 Para esta solução, alguns pontos devem ser considerados:
 
-- Por não se tratar de um site oficial, é necessário verificar a confiabilidade das informações cadastradas
-- Como não existe informação de localização, seria necessário um integração com a API do Google Maps, a partir do endereço cadastrado, para identificação de longitude e latitude.
+- Por não se tratar de um site oficial, é necessário verificar a confiabilidade das informações cadastradas.
+- Como não existe informação de localização, é necessário um integração com a API do Google Maps, a partir do endereço cadastrado, para identificação de longitude e latitude.
 - Seria necessária um tratamento dos endereços registrados para que o mesmo seja armazenado de forma estruturada, com separação dos componentes do endereço (tipo de rua, rua, numero, complemento, bairro e cidade)
 - É necessário identificar se a cervejaria não está realmente cadastrada no OSM antes de inserir um novo node com as informações corretas.
 
@@ -308,7 +308,7 @@ Benefícios:
 
 #### 2) Google Maps
 
-Para o Google Maps, poderiamos fazer uso da sua API para a realizar a pesquisa dos dados referentes a cervejarias em BH e realizar a inserção dos **nodes** a partir da API do **Open Street Map**. Pontos a serem considerados:
+Para o Google Maps, podemos fazer uso da sua API para a realizar a pesquisa dos dados referentes a cervejarias em BH e realizar a inserção dos **nodes** a partir da API do **Open Street Map**. Pontos a serem considerados:
 
 - Não foi possível encontrar no Google Maps um estrutura de dado que identifique as cervejas artesanais na região pesquisada. Assim, não há garantias que a query de busca utilizadas retorne apenas fabricas de cervejas artesanais na região.
 - Da mesma forma que apresentado no item anterior, os daods de endereço não estão estruturados, sendo necessário a extração das informações da forma já definida para o conjunto de dados do OSM. 
@@ -320,17 +320,17 @@ Benefícios
 - Todas as informações do Google Maps já tem as coordenadas necessárias para a localização do pontos adicionados.
 - É possível se beneficiar das diversas informações já disponíveis, como descrição, contatos, horários de funcionamento, entre outras.
 
-Como exemplo de um dos itens propostos, criei um script básico para a leitura do arquivo .KML disponível no [artigo citado](#artigo) anteriormente a a geração do [XML para o Open Street Map](http://wiki.openstreetmap.org/wiki/API_v0.6#Create:_PUT_.2Fapi.2F0.6.2F.5Bnode.7Cway.7Crelation.5D.2Fcreate) a partir do seu conteúdo. O script está disponível no arquivo `kml_data_extract.py`. Este script faz a leitura do nome e endereço da cervejaria presente na estutura do KML e busca as coordenadas referentes a estes dados usando a [API Google Maps](https://developers.google.com/places/web-service/search?hl=pt-br). 
+Como exemplo de um dos itens propostos, criei um script básico para a leitura do arquivo .KML disponível no [artigo citado](#artigo) anteriormente, e a geração do [XML para o Open Street Map](http://wiki.openstreetmap.org/wiki/API_v0.6#Create:_PUT_.2Fapi.2F0.6.2F.5Bnode.7Cway.7Crelation.5D.2Fcreate) a partir do seu conteúdo. O script está disponível no arquivo `kml_data_extract.py`. Este script faz a leitura do nome e endereço da cervejaria presente na estutura do KML e busca as coordenadas referentes a estes dados usando a [API Google Maps](https://developers.google.com/places/web-service/search?hl=pt-br). 
 
-O objetivo deste script é mostrar a possibilidade de integração de informações externas para integração com o Open Street Map e por este motivo faz apenas um tratamento basico dos dados, necessitando uma analise mais apurada para limpeza e consistencia das informações. 
+O objetivo deste script é mostrar a possibilidade de utilização de informações externas para integração com o Open Street Map e por este motivo faz apenas um tratamento basico dos dados, necessitando uma analise mais apurada para limpeza e consistencia das informações. 
 
-O resultado do script é um arquivo `cervejaria.xml` com o XML para utilização com a API do OpenStreetMap.
+O resultado do script é um arquivo `cervejaria.xml` com as informações para utilização com a API do OpenStreetMap.
 
-Para a utilização do script é necessária uma API KEY do Google Maps. Esta chave deve estar armazenada em um arquivo chamado API_KEY_GMAPS, no mesmo diretório do script.
+Para a utilização do script é necessária uma API KEY do Google Maps. Esta chave deve estar armazenada em um arquivo chamado `API\_KEY\_GMAPS`, no mesmo diretório do script.
 
 ### Pesquisas Adicionais
 
-#### 10 maiores areas de lazer por tipo:
+#### 10 principais areas de lazer por tipo:
 
 ```
 > db.bh.aggregate([
@@ -384,6 +384,26 @@ Resultado:
 { "_id" : "swimming", "count" : 24 }
 { "_id" : "volleyball", "count" : 19 }
 ```
+
+#### Principais 
+
+```
+> db.bh.aggregate([
+    {"$match":{
+        "cuisine":{"$exists":1}
+    }},
+    {"$group":{
+        "_id":"$cuisine",
+        "count":{"$sum":1}
+    }},
+    {"$sort":{"count":-1}},
+    {"$limit":10}
+])
+```
+Resultado:
+```
+```
+
 ## Conclusão
 
 Com a realização da analise de dados deste trabalho, percebe-se que as informações registrada para a área de Belo Horizonte está bem defasada. Vemos também que existem um aumento nas contribuições em datas mais recentes, mas ainda concentrada em sua grande parte na mão de poucos usuários.
