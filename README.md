@@ -257,7 +257,34 @@ Com base na pesquisa realizada, pode-se perceber uma grande defasagem dos dados 
 
 A fama boêmia de Belo Horizonte é vista como um dos atrativos turísticos para a cidade e desta forma poderia haver um esforço da Prefeitura de BH para atualização deste e disponibilização das informações como roteiro de noite de BH. Muito provavelmente estas informações já existem em base de dados de estatísticas da cidade e precisariam apenas de ser tratados e registrados no Open Street Map.
 
-### 10 maiores areas de lazer por tipo:
+A atualização dessas informações poderia ser realizada a partir de base de dados já existentes a partir das seguintes fontes:
+
+1) artigos e/ou sites especializados sobre cerveja artesanal
+2) dados do Google Maps
+
+#### 1) Artidos/Sites Especilizados
+
+Dentre os sites especializados, pode-se avaliar a existência de uma relação de cervejarias no site [brejas.com.br](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg), com a disponibilização de várias cervejárias, com dados de nome, endereço e site, entre outos. A partir do site, seria possível a extração de dados com o BeautifulSoup e cadastro dos mesmos no OSM, através de sua API. 
+
+Outra fonte de dados encontrada, estava presente na [materia do Estado de Minas](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml) já citada anteriormente. Nesta matéria é apresentado um mapa com as principais cervejaris. É possível fazer o download do [arquivo .KML](http://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1iOAM0YtC-04eJWm5_rfPaYaV0-0&lid=InEWwjoHiZc) deste mapa, utilizando o mesmo como fonte de informações para a carga da dados no **Open Street Map**. O arquivo também está disponível no repositório do projeto.
+
+Para esta solução, alguns pontos devem ser considerados:
+
+- Por não se tratar de um site oficial, é necessário verificar a confiabilidade das informações cadastradas
+- Como não existe informação de localização, seria necessário um integração com a API do Google Maps, a partir do endereço cadastrado, para identificação de longitude e latitude.
+- Seria necessária um tratamento dos endereços registrados para que o mesmo seja armazenado de forma estruturada, com separação dos componentes do endereço (tipo de rua, rua, numero, complemento, bairro e cidade)
+
+#### 2) Google Maps
+
+Para o Google Maps, poderiamos fazer uso da sua API para a realizar a pesquisa dos dados referentes a cervejarias em BH e realizar a inserção dos **nodes** a partir da API do **Open Street Map**. Pontos a serem considerados:
+
+- Não foi possível encontrar no Google Maps um estrutura de dado que identifique as cervejas artesanais na região pesquisada. Assim, não há garantias que a query de busca utilizadas retorne apenas fabricas de cervejas artesanais na região.
+
+- Da mesma forma que apresentado no item anterior, os daods de endereço não estão estruturados, sendo necessário a extração das informações da forma já definida para o conjunto de dados do OSM. 
+
+### Pesquisas Adicionais
+
+#### 10 maiores areas de lazer por tipo:
 
 ```
 > db.bh.aggregate([
@@ -286,7 +313,7 @@ Resultado:
 { "_id" : "dance", "count" : 9 }
 ```
 
-### 5 principais espaço de prática de esportes, por tipo:
+#### 5 principais espaço de prática de esportes, por tipo:
 
 ```
 > db.bh.aggregate([
@@ -323,3 +350,6 @@ Para o efeito do exercício proposto, acredito que o tratamento de dados foi bem
 - [Documentação do MongoDB](https://docs.mongodb.com/manual/)
 - [Wiki do OpenSteetMap](https://wiki.openstreetmap.org/wiki/)
 - [StackOvewFlow - Capitilize Words](https://stackoverflow.com/questions/1549641/how-to-capitalize-the-first-letter-of-each-word-in-a-string-python)
+- [Microcervejaria / Artesanal: Minas Gerais](http://www.brejas.com.br/cervejaria/microcervejaria/tag/estadobr/mg)
+- [Com 15 cervejarias artesanais, Grande BH se consolida como o 'cinturão da cevada' em MG](https://www.em.com.br/app/noticia/economia/2017/04/02/internas_economia,859102/cerveja-artesanal-cresce-producao-em-minas-e-grande-bh.shtml)
+- [API do Google Places](https://developers.google.com/places/web-service/search?hl=pt-br)
