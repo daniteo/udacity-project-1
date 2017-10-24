@@ -4,3 +4,5 @@ __pycache__/audit_address.cpython-36.pyc
 Udacity OpenStreetMap.pages
 __pycache__/audit_contact.cpython-36.pyc
 .DS_Store
+API_KEY_GMAPS
+gmap.py
