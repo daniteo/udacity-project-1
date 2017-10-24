@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cinturão da cevada - Minas Gerais</name>
+    <description><![CDATA[Principais cervejarias de Belo Horizonte e região<br><br>Apuração: Flávia Ayer<br>Mapa: Renan Damasceno<br>Leia mais: em.com.br]]></description>
+    <Style id="icon-1899-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>CINTURÃO DA CEVADA - MINAS GERAIS</name>
+      <Placemark>
+        <name>Wäls</name>
+        <address>Rua Padre Leopoldo Mertens, 1460 – São Francisco - BH</address>
+        <description><![CDATA[<img src="https://lh5.googleusercontent.com/BYiedSxQ1zVy9okR1dIYIfLIjkwS-srsPR4ghJhGViXbRX4bZuBebf6EDalglajjPFxzG8ErK1UcLTidWf_BaODOF8xp2foGvM0hJ5JSxQ8sD-lLnswKV2RV5622Pxs" height="200" width="auto" /><br><br>DESCRIÇÃO: O tour na fábrica ocorre aos sábados, das 11h às 16h30. Conta com um "tasting Room", para degustação das cervejas.<br>ENDEREÇO: Rua Padre Leopoldo Mertens, 1460 – São Francisco - BH<br>TELEFONE: (31) 3443-2811<br>SAIBA MAIS: https://www.facebook.com/WalsCervejas/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value><![CDATA[O tour na fábrica ocorre aos sábados, das 11h às 16h30. Conta com um "tasting Room", para degustação das cervejas.]]></value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Padre Leopoldo Mertens, 1460 – São Francisco - BH</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3443-2811</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/WalsCervejas/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh5.googleusercontent.com/BYiedSxQ1zVy9okR1dIYIfLIjkwS-srsPR4ghJhGViXbRX4bZuBebf6EDalglajjPFxzG8ErK1UcLTidWf_BaODOF8xp2foGvM0hJ5JSxQ8sD-lLnswKV2RV5622Pxs</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Backer</name>
+        <address><![CDATA[Rua Santa Rita, 220 - Olhos d'Água]]></address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/hMhVnbocNw7eCUJqdkU0V6DUgmD87ecAl6Jbddq5D4zHiF-2vlQRBn4PClHheDA_sQGPUpCamcg0YCv8kyyc9zm2MaJ-W11xwQLUlHr6K24ZU28NLHewcIpnf92Di_5d" height="200" width="auto" /><br><br>DESCRIÇÃO: A "maternidade cervejeira" pode ser visitada aos sábados. O restaurante Templo Cervejeiro fica aberto de terça a domingo.<br>ENDEREÇO: Rua Santa Rita, 220 - Olhos d'Água<br>TELEFONE: (31) 3228-8875<br>SAIBA MAIS: https://www.facebook.com/CervejariaBacker/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value><![CDATA[A "maternidade cervejeira" pode ser visitada aos sábados. O restaurante Templo Cervejeiro fica aberto de terça a domingo.]]></value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value><![CDATA[Rua Santa Rita, 220 - Olhos d'Água]]></value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3228-8875</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/CervejariaBacker/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/hMhVnbocNw7eCUJqdkU0V6DUgmD87ecAl6Jbddq5D4zHiF-2vlQRBn4PClHheDA_sQGPUpCamcg0YCv8kyyc9zm2MaJ-W11xwQLUlHr6K24ZU28NLHewcIpnf92Di_5d</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Falke</name>
+        <address>Alameda dos Falcões, 680 – Vale do Ouro – BOX 163 – Ribeirão das Neves/MG</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/ZFFCOoJWicvMuVe474_QL6-TZpAmzSZmLbpQ8lTxmuG9CZxhDXdgAnCXhVM7P940xbxHcSm2eCokrTJhgx3XUzey2KxZqGKma9viTyNlCyzV3Ar8ZykY2Ni2XVFSmB9W9Q" height="200" width="auto" /><br><br>DESCRIÇÃO: A cervejaria recebe visitantes por agendamento.<br>ENDEREÇO: Alameda dos Falcões, 680 – Vale do Ouro – BOX 163 – Ribeirão das Neves/MG <br>TELEFONE: (31) 2551-4300<br>SAIBA MAIS: https://www.facebook.com/falke.bier/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A cervejaria recebe visitantes por agendamento.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Alameda dos Falcões, 680 – Vale do Ouro – BOX 163 – Ribeirão das Neves/MG </value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 2551-4300</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/falke.bier/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/ZFFCOoJWicvMuVe474_QL6-TZpAmzSZmLbpQ8lTxmuG9CZxhDXdgAnCXhVM7P940xbxHcSm2eCokrTJhgx3XUzey2KxZqGKma9viTyNlCyzV3Ar8ZykY2Ni2XVFSmB9W9Q</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Krug Bier</name>
+        <address>Rua Alaska, 115A - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/ZO3rnobqqF1HfS6aaFAEwOwOgS-l_Jq7nrpEp8bhxDcHJNB_XvaZuJL7_qRWlmDghPd3onV9eXgIlS3NFCBx2ZejzNBsIyIhA9zbrDTTdF67e6QDUFeJL_VdQIO3CAl18w" height="200" width="auto" /><br><br>DESCRIÇÃO: Todos os sábados, há um tour guiado, das 10h às 12h, para conhecer o processo de produção e degustar os chopes artesanais na fonte.<br>ENDEREÇO: Rua Alaska, 115A - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3507-0777<br>SAIBA MAIS: https://www.facebook.com/KrugBier/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Todos os sábados, há um tour guiado, das 10h às 12h, para conhecer o processo de produção e degustar os chopes artesanais na fonte.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Alaska, 115A - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3507-0777</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/KrugBier/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/ZO3rnobqqF1HfS6aaFAEwOwOgS-l_Jq7nrpEp8bhxDcHJNB_XvaZuJL7_qRWlmDghPd3onV9eXgIlS3NFCBx2ZejzNBsIyIhA9zbrDTTdF67e6QDUFeJL_VdQIO3CAl18w</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Taberna do Vale</name>
+        <address>Avenida Canadá, 968 - Bairro Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/2eq8YOqESOWqyl_lQMw7RWhPpakhRPiFuR_GH7ZZMT1fD5GXNxyWQzDeBU5MX9tYBHZcQQg0p_XfSzzmRD3aCa9mPnpyscz49JBA8LxxcPnpIQU8omIm5k5q6fxN8Qrgsw" height="200" width="auto" /><br><br>DESCRIÇÃO: A cervejaria funciona como escola e oferece cursos sobre produção, harmonização e cultura cervejeira.<br>ENDEREÇO: Avenida Canadá, 968 - Bairro Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3581-3047<br>SAIBA MAIS: https://www.facebook.com/tabernadovalecervejaria/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A cervejaria funciona como escola e oferece cursos sobre produção, harmonização e cultura cervejeira.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida Canadá, 968 - Bairro Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3581-3047</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/tabernadovalecervejaria/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/2eq8YOqESOWqyl_lQMw7RWhPpakhRPiFuR_GH7ZZMT1fD5GXNxyWQzDeBU5MX9tYBHZcQQg0p_XfSzzmRD3aCa9mPnpyscz49JBA8LxxcPnpIQU8omIm5k5q6fxN8Qrgsw</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Küd Bier</name>
+        <address>Rua Kenton, 36 - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/jb3Rkk4fQ8p3ngrMwlwnEmnUqgeZljm8BDD9pwdF7DJfQ9QPLP-h6ElWEQovpiw9tu0qbdjMmJK-91vGd0GekogOFj4k0KbDMBHpBiuDnUUpyCDBF3OFrUs-y8gNc4wW" height="200" width="auto" /><br><br>DESCRIÇÃO: A fábrica recebe visitas por agendamento.<br>ENDEREÇO: Rua Kenton, 36 - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3589-6030<br>SAIBA MAIS: https://www.facebook.com/CervejariaKud/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A fábrica recebe visitas por agendamento.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Kenton, 36 - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3589-6030</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/CervejariaKud/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/jb3Rkk4fQ8p3ngrMwlwnEmnUqgeZljm8BDD9pwdF7DJfQ9QPLP-h6ElWEQovpiw9tu0qbdjMmJK-91vGd0GekogOFj4k0KbDMBHpBiuDnUUpyCDBF3OFrUs-y8gNc4wW</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Capa Preta</name>
+        <address>Rua Projetada, 185 - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/8r4626Si6nRsH-oS2Qi0U-CUOVf4iAEve1_aCxBLCLRfWOa71AeYFPFj_hOH98HvPGMl1nvDALisdmXkhbPOP8JX5DKLLMe2-S31H-Yxn8vxAKKF7Ui5wg7XNVCcBu5N" height="200" width="auto" /><br><br>DESCRIÇÃO: Além da fábrica, conta com um Beer Truck usado em feiras e festas.<br>ENDEREÇO: Rua Projetada, 185 - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3665-9104<br>SAIBA MAIS: https://www.facebook.com/cervejariacapapreta/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Além da fábrica, conta com um Beer Truck usado em feiras e festas.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Projetada, 185 - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3665-9104</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/cervejariacapapreta/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/8r4626Si6nRsH-oS2Qi0U-CUOVf4iAEve1_aCxBLCLRfWOa71AeYFPFj_hOH98HvPGMl1nvDALisdmXkhbPOP8JX5DKLLMe2-S31H-Yxn8vxAKKF7Ui5wg7XNVCcBu5N</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Koala</name>
+        <address>Rua Niágara, 339 - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/Z1rAufBRHB7RK3VU4pthucucXB0AKseqwg7eQJeCSUqr3flyFQ9f8qk3Q0c3fJR4rABLur_EDfdFEq6XLkNCmRVtYCdp5cBdjTALs2j1rkyWE5aFGuNrvd8KMg1Oro3e0A" height="200" width="auto" /><br><br>DESCRIÇÃO: Amantes das cervejas podem visitar a fábrica aos sábados para encher seus growlers. Às sextas, a cervejaria promove um happy hour.<br>ENDEREÇO: Rua Niágara, 339 - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3541-5274<br>SAIBA MAIS: https://www.facebook.com/KoalaSanBrew/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Amantes das cervejas podem visitar a fábrica aos sábados para encher seus growlers. Às sextas, a cervejaria promove um happy hour.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Niágara, 339 - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3541-5274</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/KoalaSanBrew/</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/Z1rAufBRHB7RK3VU4pthucucXB0AKseqwg7eQJeCSUqr3flyFQ9f8qk3Q0c3fJR4rABLur_EDfdFEq6XLkNCmRVtYCdp5cBdjTALs2j1rkyWE5aFGuNrvd8KMg1Oro3e0A</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Trovense</name>
+        <address>Rua Tenente Paulo Afonso de Souza, 364 - Arvoredo - Contagem</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/_Az1qR5QX4hwpXVwqLJ1e-ff527sIn2ldZTKf1bzRnL7femsr2Imuj1BQynkrrKimCmkImUL56IHi4g2aFiae6lh3bSB-FtXISVsRiY7m3K1HTuD6tp00hscJmDpJ-oI" height="200" width="auto" /><br><br>DESCRIÇÃO: Produz a linha de cervejas Reines Bier<br>ENDEREÇO: Rua Tenente Paulo Afonso de Souza, 364 - Arvoredo - Contagem<br>TELEFONE: <br>SAIBA MAIS: https://www.facebook.com/Trovense/<br><br><img src="https://lh4.googleusercontent.com/w1-FD310YSpHbhJ-55KFcZTwfKLQcqegisnGjOmra35wdmFWviP81cCwEOByEocoQl91ktpOnd9K55GO9E4Wpvp_zr-wsh2IhqbxEYHeSZBk1u0TVWo6kkchI4DJess" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Produz a linha de cervejas Reines Bier</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Tenente Paulo Afonso de Souza, 364 - Arvoredo - Contagem</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/Trovense/</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/_Az1qR5QX4hwpXVwqLJ1e-ff527sIn2ldZTKf1bzRnL7femsr2Imuj1BQynkrrKimCmkImUL56IHi4g2aFiae6lh3bSB-FtXISVsRiY7m3K1HTuD6tp00hscJmDpJ-oI https://lh4.googleusercontent.com/w1-FD310YSpHbhJ-55KFcZTwfKLQcqegisnGjOmra35wdmFWviP81cCwEOByEocoQl91ktpOnd9K55GO9E4Wpvp_zr-wsh2IhqbxEYHeSZBk1u0TVWo6kkchI4DJess</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Uaimií Cervejaria de Fazenda</name>
+        <address>Rua Grão Mogol, 1176 - Sion</address>
+        <description><![CDATA[DESCRIÇÃO: A fábrica fica numa fazenda no distrito de Acuruí, em Itabirito. A cervejaria conta com um pub em BH.<br>ENDEREÇO: Rua Grão Mogol, 1176 - Sion <br>TELEFONE: (31) 3285-3435<br>SAIBA MAIS: https://www.facebook.com/Uaimii/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A fábrica fica numa fazenda no distrito de Acuruí, em Itabirito. A cervejaria conta com um pub em BH.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Grão Mogol, 1176 - Sion </value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3285-3435</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/Uaimii/?fref=ts</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Loba</name>
+        <address>Zona Rural - Guarará - Santana dos Montes</address>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/qadlTCNeEXR4lPguAE2rJ4WC25O_aNC7Gw-e7etzBn0k7N0i5dZOfV5rvg8hK6ZbtNSCjWEGcl7W6Dls_Pa6cloGvBCTzKwmpEOdUvTlK7jy3tVCn4CC8_hEwm7v29w2" height="200" width="auto" /><br><br>DESCRIÇÃO: A sede da cervejaria fica na cidade de Santana dos Montes, próxima a Conselheiro Lafaiete. Foi inaugurada em 2014.<br>ENDEREÇO: Zona Rural - Guarará - Santana dos Montes<br>TELEFONE: (31) 3814-0858<br>SAIBA MAIS: https://www.facebook.com/cervejarialoba/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A sede da cervejaria fica na cidade de Santana dos Montes, próxima a Conselheiro Lafaiete. Foi inaugurada em 2014.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Zona Rural - Guarará - Santana dos Montes</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3814-0858</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/cervejarialoba/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/qadlTCNeEXR4lPguAE2rJ4WC25O_aNC7Gw-e7etzBn0k7N0i5dZOfV5rvg8hK6ZbtNSCjWEGcl7W6Dls_Pa6cloGvBCTzKwmpEOdUvTlK7jy3tVCn4CC8_hEwm7v29w2</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Brucke</name>
+        <address>Alameda Terra, 599 - Ville de Montagne - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/OBF5ccTpZavfKx_LiRinK-CnZY2ci7zvYFbv9IysEGNKwK10E0nIXSOHGv6mFYhtoDHWUZatPsd3cNbx5h4Fo9Z2DkYQ_Z1qpaYlauZ_b7tsaHARU9YsMftPuS__rJC5HQ" height="200" width="auto" /><br><br>DESCRIÇÃO: <br>ENDEREÇO: Alameda Terra, 599 - Ville de Montagne - Nova Lima<br>TELEFONE: (31) 98484-2215<br>SAIBA MAIS: https://www.facebook.com/cervejabrucke/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value/>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Alameda Terra, 599 - Ville de Montagne - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 98484-2215</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/cervejabrucke/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/OBF5ccTpZavfKx_LiRinK-CnZY2ci7zvYFbv9IysEGNKwK10E0nIXSOHGv6mFYhtoDHWUZatPsd3cNbx5h4Fo9Z2DkYQ_Z1qpaYlauZ_b7tsaHARU9YsMftPuS__rJC5HQ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Fürst Bier</name>
+        <address>Rua Bernardo Guimarães, 2612 - Lourdes - BH</address>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/IllPlhFtUA2RV-CJpA_7QIOkfungRXTT7SjtY_b5vqm8Z601Mc1Q52MbIIco9VTnsIKskeTosUiFrWYLmBVo8rm4R1tVSqiUTcVVKPndYKw_H0nwURWb8p5zPfjeT4pemQ" height="200" width="auto" /><br><br>DESCRIÇÃO: A matriz da cervejaria fica em Formiga. A marca acabou de inaugurar um bar em BH.<br>ENDEREÇO: Rua Bernardo Guimarães, 2612 - Lourdes - BH<br>TELEFONE: (31) 4109-1409<br>SAIBA MAIS: https://www.facebook.com/fursttaproom/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A matriz da cervejaria fica em Formiga. A marca acabou de inaugurar um bar em BH.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Bernardo Guimarães, 2612 - Lourdes - BH</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 4109-1409</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/fursttaproom/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/IllPlhFtUA2RV-CJpA_7QIOkfungRXTT7SjtY_b5vqm8Z601Mc1Q52MbIIco9VTnsIKskeTosUiFrWYLmBVo8rm4R1tVSqiUTcVVKPndYKw_H0nwURWb8p5zPfjeT4pemQ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Aleluia</name>
+        <address>BR-381, Bom Destino - São Benedito - Santa Luzia</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/sgHLJ1k9E_pgM7-H_i0WnA0VDJ89yYDyXpxqJonDsZpZ0QjsyOOkRQAYp6K4W3Al_OrzP-xQmMtCcLN5_aBecEHqVSLBvHY3eDy3ksIa-f_QWZ9RHgmG8i4VHIabIiI" height="200" width="auto" /><br><br>DESCRIÇÃO: <br>ENDEREÇO: BR-381, Bom Destino - São Benedito - Santa Luzia<br>TELEFONE: (31) 3691-3392<br>SAIBA MAIS: https://www.facebook.com/aleluiabier/?fref=ts<br><br><img src="https://lh4.googleusercontent.com/CmM4QkVtHYe5xOUqEAJvpZULvzmJxJk-dume1vNk2Dzbwd8Q08tqWGokRV_TnGRRwSi_UsE4QHVNP4J-gpgZjx0jtvZF_PLko9UGisOyOFyg9rL_ogPAREPREHBeQ3sg" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value/>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>BR-381, Bom Destino - São Benedito - Santa Luzia</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3691-3392</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/aleluiabier/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/sgHLJ1k9E_pgM7-H_i0WnA0VDJ89yYDyXpxqJonDsZpZ0QjsyOOkRQAYp6K4W3Al_OrzP-xQmMtCcLN5_aBecEHqVSLBvHY3eDy3ksIa-f_QWZ9RHgmG8i4VHIabIiI https://lh4.googleusercontent.com/CmM4QkVtHYe5xOUqEAJvpZULvzmJxJk-dume1vNk2Dzbwd8Q08tqWGokRV_TnGRRwSi_UsE4QHVNP4J-gpgZjx0jtvZF_PLko9UGisOyOFyg9rL_ogPAREPREHBeQ3sg</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Verace</name>
+        <address>Avenida Canadá, 212 - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/F3645JAjZ7bFTdGb04Cy3lnkq5UIXYXkOnFNhWrz47kGeQ5D98oPYYyjHBOP1d3UwBow01l_bT1JQeb7rFEM6_WDKJ3c__SRUy-sjxi7IgSSKwppXFYSiwa3Jj9OLlmn" height="200" width="auto" /><br><br>DESCRIÇÃO: Promove eventos em sua fábrica para a degustação de cervejas e abriga a produção de outros cervejarias<br>ENDEREÇO: Avenida Canadá, 212 - Jardim Canadá - Nova Lima<br>TELEFONE: (31) 3541-6103<br>SAIBA MAIS: https://www.facebook.com/cervejariaverace/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Promove eventos em sua fábrica para a degustação de cervejas e abriga a produção de outros cervejarias</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida Canadá, 212 - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 3541-6103</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/cervejariaverace/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/F3645JAjZ7bFTdGb04Cy3lnkq5UIXYXkOnFNhWrz47kGeQ5D98oPYYyjHBOP1d3UwBow01l_bT1JQeb7rFEM6_WDKJ3c__SRUy-sjxi7IgSSKwppXFYSiwa3Jj9OLlmn</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Ouropretana</name>
+        <address>Rua Benedito Valadares, 250 - Rosário
+Ouro Prêto, MG 35400-000</address>
+        <description><![CDATA[<img src="https://lh5.googleusercontent.com/KWYYnzXihTBEe7JwBmTywdIR1Z-9VDVPqOtyFAAnT8aq-2r04CEn20k1PxxvHH0cASskXPH7-o_IzNPh-cE0sVSG70-k2IVzqNCt4gD4Nj-PB0eXIBtyAyNL8CgezGPS" height="200" width="auto" /><br><br>DESCRIÇÃO: A fábrica fica em Ouro Preto, onde a cervejaria conta também com uma loja, com todos seus produtos disponíveis.<br>ENDEREÇO: Rua Benedito Valadares, 250 - Rosário<br>Ouro Prêto, MG 35400-000<br>TELEFONE: (31) 98818-0646<br>SAIBA MAIS: https://www.facebook.com/ouropretana/?fref=ts]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A fábrica fica em Ouro Preto, onde a cervejaria conta também com uma loja, com todos seus produtos disponíveis.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Benedito Valadares, 250 - Rosário
+Ouro Prêto, MG 35400-000</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 98818-0646</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/ouropretana/?fref=ts</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh5.googleusercontent.com/KWYYnzXihTBEe7JwBmTywdIR1Z-9VDVPqOtyFAAnT8aq-2r04CEn20k1PxxvHH0cASskXPH7-o_IzNPh-cE0sVSG70-k2IVzqNCt4gD4Nj-PB0eXIBtyAyNL8CgezGPS</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Inconfidentes</name>
+        <address>Rua Kenon, 168 - Jardim canadá - Nova Lima</address>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/nLdacGa2gM8dts4vKFrxHTMCff3hNfYUellrcCKqBWR4BPZSrnolcTy6dBHoBRwHspeha9RNxzXcnd_M7aIQcD9X2_r8dls9chkDgliYHjeHACvlrbvC_86ZNiQrMhBM" height="200" width="auto" /><br><br>DESCRIÇÃO: A fábrica produz a cerveja Vinil<br>ENDEREÇO: Rua Kenon, 168 - Jardim canadá - Nova Lima <br>TELEFONE: <br>SAIBA MAIS: https://www.facebook.com/Companhia-Cervejaria-Jambreiro-215597021819420/<br><br><img src="https://lh5.googleusercontent.com/79xGgSueU43GrHKjS6k523bpZxQB8ZPDxie_H6rxdnFZ1T6VMN3Q9Shd8j46FzL9p8WI1_2M0gmzPozh8i9g1UH2VEqWRHvhMTiP3LWcZybHiu9dTH0PFIbUP-G7djDARA" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A fábrica produz a cerveja Vinil</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Kenon, 168 - Jardim canadá - Nova Lima </value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/Companhia-Cervejaria-Jambreiro-215597021819420/</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/nLdacGa2gM8dts4vKFrxHTMCff3hNfYUellrcCKqBWR4BPZSrnolcTy6dBHoBRwHspeha9RNxzXcnd_M7aIQcD9X2_r8dls9chkDgliYHjeHACvlrbvC_86ZNiQrMhBM https://lh5.googleusercontent.com/79xGgSueU43GrHKjS6k523bpZxQB8ZPDxie_H6rxdnFZ1T6VMN3Q9Shd8j46FzL9p8WI1_2M0gmzPozh8i9g1UH2VEqWRHvhMTiP3LWcZybHiu9dTH0PFIbUP-G7djDARA</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>São Sebastião</name>
+        <address>São Sebastião das Águas Claras</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/o7dfgTaxna3wO6cvay__WHd8OkkPyhdz-uEBQPFlowbrrVZkWyQf_qG7nFgtgAWpQieGcmC7UmMKGzSm_Grw4pyi8iZPwilUR8DSxxYAzh1-Bze34PdXCwi2f18QMGc" height="200" width="auto" /><br><br>DESCRIÇÃO: A cervejaria fica localizada à Rua Dona Dica, 41, em Macacos.<br>ENDEREÇO: São Sebastião das Águas Claras<br>TELEFONE: (31) 99417-1177<br>SAIBA MAIS: https://www.facebook.com/cervejariasaosebastiao/]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A cervejaria fica localizada à Rua Dona Dica, 41, em Macacos.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>São Sebastião das Águas Claras</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value>(31) 99417-1177</value>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>https://www.facebook.com/cervejariasaosebastiao/</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/o7dfgTaxna3wO6cvay__WHd8OkkPyhdz-uEBQPFlowbrrVZkWyQf_qG7nFgtgAWpQieGcmC7UmMKGzSm_Grw4pyi8iZPwilUR8DSxxYAzh1-Bze34PdXCwi2f18QMGc</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Benedith</name>
+        <address>Rua Antônio Thomaz de Rezende, 180 - Osvaldo Rezende - Uberlândia/MG</address>
+        <description><![CDATA[DESCRIÇÃO: Microcervejaria artesanal<br>ENDEREÇO: Rua Antônio Thomaz de Rezende, 180 - Osvaldo Rezende - Uberlândia/MG<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cerveja.benedith]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Microcervejaria artesanal</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Antônio Thomaz de Rezende, 180 - Osvaldo Rezende - Uberlândia/MG</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cerveja.benedith</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Viçosa Bier</name>
+        <address>Avenida Bernardes Filho, 241 - Lourdes - Viçosa</address>
+        <description><![CDATA[DESCRIÇÃO: Fabricação de cervejas e chopp<br>ENDEREÇO: Avenida Bernardes Filho, 241 - Lourdes - Viçosa<br>TELEFONE: <br>SAIBA MAIS: facebook.com/vicosabiercervejaria]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Fabricação de cervejas e chopp</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida Bernardes Filho, 241 - Lourdes - Viçosa</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/vicosabiercervejaria</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Gonçalves Cervejaria Artesanal</name>
+        <address>Avenida Mansur Frahya, 647 - Jardim Elisabeth - Poços de Caldas</address>
+        <description><![CDATA[DESCRIÇÃO: Fábrica de cervejas com instalação própria<br>ENDEREÇO: Avenida Mansur Frahya, 647 - Jardim Elisabeth - Poços de Caldas<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariagoncalves]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Fábrica de cervejas com instalação própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida Mansur Frahya, 647 - Jardim Elisabeth - Poços de Caldas</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariagoncalves</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Brust</name>
+        <address>Rua Orlando, 469 - Caiçara - Belo Horizonte</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria e produtora de eventos<br>ENDEREÇO: Rua Orlando, 469 - Caiçara - Belo Horizonte<br>TELEFONE: <br>SAIBA MAIS: facebook.com/brustbier]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria e produtora de eventos</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Orlando, 469 - Caiçara - Belo Horizonte</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/brustbier</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Acadêmica</name>
+        <address>Rua Amaro Lanari, 59 - A - Saramenha - Ouro Preto</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria de base tecnológica com desenvolvimento de cervejas com leveduras oriundas da produção de cachaça<br>ENDEREÇO: Rua Amaro Lanari, 59 - A - Saramenha - Ouro Preto<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejaria.academica]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria de base tecnológica com desenvolvimento de cervejas com leveduras oriundas da produção de cachaça</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Amaro Lanari, 59 - A - Saramenha - Ouro Preto</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejaria.academica</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Senhorita </name>
+        <address>Rua Ferraz Leite, 304 - Centro - Paraguaçu</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria com fábrica própria<br>ENDEREÇO: Rua Ferraz Leite, 304 - Centro - Paraguaçu<br>TELEFONE: <br>SAIBA MAIS: ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Ferraz Leite, 304 - Centro - Paraguaçu</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Hofbrauhaus Belo Horizonte</name>
+        <address>Avenida do Contorno, 7613, Lourdes - Belo Horizonte </address>
+        <description><![CDATA[DESCRIÇÃO: Brew Pub, primeira franquia da Hofbrauhaus München da América Latina. Conta com fábrica própria<br>ENDEREÇO: Avenida do Contorno, 7613, Lourdes - Belo Horizonte <br>TELEFONE: <br>SAIBA MAIS: facebook.com/HB.Belo.Horizonte]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Brew Pub, primeira franquia da Hofbrauhaus München da América Latina. Conta com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida do Contorno, 7613, Lourdes - Belo Horizonte </value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/HB.Belo.Horizonte</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Biberis Beer Artesanal</name>
+        <address>Belo Horizonte - Minas Gerais</address>
+        <description><![CDATA[DESCRIÇÃO: Produtor de cerveja artesanal criada há pouco mais de dois anos, resultado de um desafio entre amigos e familiares<br>ENDEREÇO: Belo Horizonte - Minas Gerais<br>TELEFONE: <br>SAIBA MAIS: facebook.com/Biberis-Beer]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Produtor de cerveja artesanal criada há pouco mais de dois anos, resultado de um desafio entre amigos e familiares</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Belo Horizonte - Minas Gerais</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/Biberis-Beer</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Prussia Bier</name>
+        <address>Rodovia MG-129, km 1.4, São Gonçalo do Rio Abaixo</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria artesanal com fábrica própria<br>ENDEREÇO: Rodovia MG-129, km 1.4, São Gonçalo do Rio Abaixo<br>TELEFONE: <br>SAIBA MAIS: facebook.com/prussiabier]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria artesanal com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rodovia MG-129, km 1.4, São Gonçalo do Rio Abaixo</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/prussiabier</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Mills Brewery</name>
+        <address>Rua Manoel Passos, 369 - Bairro Santa Cruz - Belo Horizonte</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria com fábrica própria<br>ENDEREÇO: Rua Manoel Passos, 369 - Bairro Santa Cruz - Belo Horizonte<br>TELEFONE: <br>SAIBA MAIS: facebook.com/millsbrewery]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Manoel Passos, 369 - Bairro Santa Cruz - Belo Horizonte</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/millsbrewery</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Velho Brasa Eireli</name>
+        <address>Avenida Severino Ballesteros Rodrigues, 461 - Ressaca - Contagem</address>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/hRI0M7QE7KBIU74vRmnxtiQOtjOBJ4QDb09txtD1d35A2lN9KtoLZLibtba11G3-Bi3T3gf78CEQFw7xMVPsHt9md2ukCuTGtMPkQ7bsyEuHfTpvA92Uwuk4tMBvm-vskQ" height="200" width="auto" /><br><br>DESCRIÇÃO: Cervejaria com produção de cinco rótulos de cervejas e chopes especiais<br>ENDEREÇO: Avenida Severino Ballesteros Rodrigues, 461 - Ressaca - Contagem<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariavelhobrasa]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com produção de cinco rótulos de cervejas e chopes especiais</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Avenida Severino Ballesteros Rodrigues, 461 - Ressaca - Contagem</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariavelhobrasa</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/hRI0M7QE7KBIU74vRmnxtiQOtjOBJ4QDb09txtD1d35A2lN9KtoLZLibtba11G3-Bi3T3gf78CEQFw7xMVPsHt9md2ukCuTGtMPkQ7bsyEuHfTpvA92Uwuk4tMBvm-vskQ</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Namtrah Cerveja Artesanal</name>
+        <address>Rua Ana de Oliveira, 698 - Centro - Patos de Minas</address>
+        <description><![CDATA[DESCRIÇÃO: Microcervejaria com produção mensal de 4 mil litros<br>ENDEREÇO: Rua Ana de Oliveira, 698 - Centro - Patos de Minas<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejanamtrah]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Microcervejaria com produção mensal de 4 mil litros</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Ana de Oliveira, 698 - Centro - Patos de Minas</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejanamtrah</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Artesamalt</name>
+        <address>Rodovia BR-040, KM 487, S/N</address>
+        <description><![CDATA[<img src="https://lh5.googleusercontent.com/Mj_G5q3PJCMatQjd0xcl0jBakmFD1zGyFn0TJFERbmJGWYSCD6QZjri-wuP255n1WzWLLHoeQNP5X7OR4Y7ggaUItZY4NBLlY646l4FW3k3KBL7oZIvcj02Boz0Lm3z9" height="200" width="auto" /><br><br>DESCRIÇÃO: A cervejaria Artesamalt é um grande berço das cervejarias ciganas, abrigando a produção de mais de 35 marcas. A fábrica conta com estrutura para cursos e eventos, além de um bar<br>ENDEREÇO: Rodovia BR-040, KM 487, S/N<br>TELEFONE: <br>SAIBA MAIS: facebook.com.br/artesamalt]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A cervejaria Artesamalt é um grande berço das cervejarias ciganas, abrigando a produção de mais de 35 marcas. A fábrica conta com estrutura para cursos e eventos, além de um bar</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rodovia BR-040, KM 487, S/N</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com.br/artesamalt</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh5.googleusercontent.com/Mj_G5q3PJCMatQjd0xcl0jBakmFD1zGyFn0TJFERbmJGWYSCD6QZjri-wuP255n1WzWLLHoeQNP5X7OR4Y7ggaUItZY4NBLlY646l4FW3k3KBL7oZIvcj02Boz0Lm3z9</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Indústria e Cervejaria Artesanal de Minas Gerais</name>
+        <address>Rua Rainha Elizabeth, 639 - Jardim Canadá - Nova Lima</address>
+        <description><![CDATA[DESCRIÇÃO: Fábrica de cerveja artesanal. Além de seus próprios rótulos, produz a de terceiros<br>ENDEREÇO: Rua Rainha Elizabeth, 639 - Jardim Canadá - Nova Lima<br>TELEFONE: <br>SAIBA MAIS: ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Fábrica de cerveja artesanal. Além de seus próprios rótulos, produz a de terceiros</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Rainha Elizabeth, 639 - Jardim Canadá - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Gosling e Viterbo</name>
+        <address>Rua Juramento, 202 B, Pompéia - Belo Horizonte</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria com fábrica própria<br>ENDEREÇO: Rua Juramento, 202 B, Pompéia - Belo Horizonte<br>TELEFONE: <br>SAIBA MAIS: facebook.com/gosling-Bier-Cerveja-Artesanal]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Juramento, 202 B, Pompéia - Belo Horizonte</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/gosling-Bier-Cerveja-Artesanal</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Cervejaria Caxambu</name>
+        <address>Baependi - Minas Gerais</address>
+        <description><![CDATA[DESCRIÇÃO: Microcervejaria artesanal com fábrica própria<br>ENDEREÇO: Baependi - Minas Gerais<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariacaxambu]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Microcervejaria artesanal com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Baependi - Minas Gerais</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariacaxambu</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Cervejaria 040</name>
+        <address>Rua Calipso, 242 - Vale do Sol - Nova Lima</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria com fábrica própria<br>ENDEREÇO: Rua Calipso, 242 - Vale do Sol - Nova Lima<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejaria040]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Calipso, 242 - Vale do Sol - Nova Lima</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejaria040</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Capim Branco</name>
+        <address>Rodovia BR-040, Km487 - Capim Branco </address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria Especializada em produção cigana. Está produzindo, atualmente, mais de 78 rótulos com 35 cervejarias ciganas.<br>ENDEREÇO: Rodovia BR-040, Km487 - Capim Branco <br>TELEFONE: <br>SAIBA MAIS: ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria Especializada em produção cigana. Está produzindo, atualmente, mais de 78 rótulos com 35 cervejarias ciganas.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rodovia BR-040, Km487 - Capim Branco </value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Götter</name>
+        <address>R. Antônio Carlos, 1541 - São Cristóvão - Pará de Minas</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria artesanal com fábrica própria.<br>ENDEREÇO: R. Antônio Carlos, 1541 - São Cristóvão - Pará de Minas<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariagotter]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria artesanal com fábrica própria.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>R. Antônio Carlos, 1541 - São Cristóvão - Pará de Minas</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariagotter</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Cervejaria Sátira</name>
+        <address>Rua Fernandes Tourinho, 97 - Funcionários - Belo Horizonte</address>
+        <description><![CDATA[DESCRIÇÃO: A cervejaria possui espaço para realização de eventos, fornece chope e tem um bar próprio na Savassi.<br>ENDEREÇO: Rua Fernandes Tourinho, 97 - Funcionários - Belo Horizonte<br>TELEFONE: <br>SAIBA MAIS: ]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>A cervejaria possui espaço para realização de eventos, fornece chope e tem um bar próprio na Savassi.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Fernandes Tourinho, 97 - Funcionários - Belo Horizonte</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value/>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Danoyt Beer</name>
+        <address>Francisco Lucas - Nova Serrana - CEP 35519-00</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria com fábrica própria<br>ENDEREÇO: Francisco Lucas - Nova Serrana - CEP 35519-00<br>TELEFONE: <br>SAIBA MAIS: danoytbeer.com.br]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Francisco Lucas - Nova Serrana - CEP 35519-00</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>danoytbeer.com.br</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Antuérpia</name>
+        <address>Park Sul, BR-040, Km 801 - Matias Barbosa</address>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/b5zsdvmk2C0JbzetmTg-rp3sMQuOG9qx_qJYHaAGEpqA5uo9a5tqucohAXjj3SpWhVOA_d5L6jxz4F3SME0RTFi-iwenI45BvnvgLx6Y-7MpLoHO0tesPvcLJAZifLUv" height="200" width="auto" /><br><br>DESCRIÇÃO: Cervejaria com fábrica própria. Produz o próprio rótulo e mais 30 marcas ciganas.<br>ENDEREÇO: Park Sul, BR-040, Km 801 - Matias Barbosa<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariantuerpia]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria com fábrica própria. Produz o próprio rótulo e mais 30 marcas ciganas.</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Park Sul, BR-040, Km 801 - Matias Barbosa</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariantuerpia</value>
+          </Data>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/b5zsdvmk2C0JbzetmTg-rp3sMQuOG9qx_qJYHaAGEpqA5uo9a5tqucohAXjj3SpWhVOA_d5L6jxz4F3SME0RTFi-iwenI45BvnvgLx6Y-7MpLoHO0tesPvcLJAZifLUv</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>Brüder</name>
+        <address>Rua Ricardo Caram Guimarães, 366, Distrito Industrial - Ipatinga</address>
+        <description><![CDATA[DESCRIÇÃO: Cervejaria e bar<br>ENDEREÇO: Rua Ricardo Caram Guimarães, 366, Distrito Industrial - Ipatinga<br>TELEFONE: <br>SAIBA MAIS: facebook.com/cervejariabruder]]></description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <ExtendedData>
+          <Data name="DESCRIÇÃO">
+            <value>Cervejaria e bar</value>
+          </Data>
+          <Data name="ENDEREÇO">
+            <value>Rua Ricardo Caram Guimarães, 366, Distrito Industrial - Ipatinga</value>
+          </Data>
+          <Data name="TELEFONE">
+            <value/>
+          </Data>
+          <Data name="SAIBA MAIS">
+            <value>facebook.com/cervejariabruder</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
