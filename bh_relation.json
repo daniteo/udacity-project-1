@@ -9,6 +9,7 @@
   },
   "data_type": "relation",
   "name": "Instituto de Ci\u00eancias Exatas",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -2025,6 +2026,7 @@
     "uid": "651869"
   },
   "data_type": "relation",
+  "landuse": "recreation_ground",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -3802,6 +3804,7 @@
   },
   "data_type": "relation",
   "name": "2150 - Graja\u00fa/Sion via Av. do Contorno (ida)",
+  "operator": "Cons\u00f3rcio Dom Pedro II",
   "type": "route",
   "members": {
     "ways": [
@@ -3864,6 +3867,7 @@
   },
   "data_type": "relation",
   "name": "9403 - Para\u00edso/Cai\u00e7ara (volta)",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -4180,6 +4184,7 @@
   },
   "data_type": "relation",
   "name": "3302-A - Nova Pampulha via Itamarati",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route",
   "members": {
     "ways": [
@@ -4350,6 +4355,7 @@
   },
   "data_type": "relation",
   "name": "Graja\u00fa/Sion (ida)",
+  "operator": "Cons\u00f3rcio Dez",
   "type": "route",
   "members": {
     "ways": [
@@ -4507,6 +4513,7 @@
   },
   "amenity": "college",
   "name": "Faculdade de Filosofia e Ci\u00eancias Humanas",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "http://www.fafich.ufmg.br/"
@@ -4535,6 +4542,7 @@
   "data_type": "relation",
   "amenity": "college",
   "name": "Faculdade de Letras",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -4584,6 +4592,7 @@
   },
   "data_type": "relation",
   "name": "Faculdade de Farm\u00e1cia",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -4604,6 +4613,7 @@
   },
   "data_type": "relation",
   "name": "Escola de Engenharia",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "https://www.eng.ufmg.br"
@@ -4637,6 +4647,7 @@
   },
   "data_type": "relation",
   "name": "Departamento de Qu\u00edmica",
+  "operator": "Instituto de Ci\u00eancias Exatas",
   "type": "multipolygon",
   "contact": {
     "site": "http://www.qui.ufmg.br/"
@@ -6810,6 +6821,7 @@
   },
   "data_type": "relation",
   "name": "4108 - Pedro II/Mangabeiras via Av. Afonso Pena - ida",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route",
   "members": {
     "ways": [
@@ -9033,6 +9045,7 @@
   },
   "data_type": "relation",
   "name": "Trem de passageiros da Estrada de Ferro Vit\u00f3ria a Minas",
+  "operator": "Vale",
   "type": "route",
   "members": {
     "nodes": [
@@ -9751,6 +9764,7 @@
   },
   "data_type": "relation",
   "name": "SC01-A - Circular Av. do Contorno",
+  "operator": "Via\u00e7\u00e3o Sandra",
   "type": "route",
   "members": {
     "ways": [
@@ -9832,6 +9846,7 @@
   },
   "data_type": "relation",
   "name": "4108 - Pedro II/Mangabeiras via Av. Afonso Pena - volta",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route",
   "members": {
     "ways": [
@@ -9908,6 +9923,7 @@
   },
   "data_type": "relation",
   "name": "001-A - Circular Contagem",
+  "operator": "Cons\u00f3rcio Sul",
   "type": "route",
   "members": {
     "ways": [
@@ -10052,6 +10068,7 @@
   },
   "data_type": "relation",
   "name": "001-B - Circular Contagem",
+  "operator": "Cons\u00f3rcio Norte",
   "type": "route",
   "members": {
     "ways": [
@@ -10203,6 +10220,7 @@
   },
   "data_type": "relation",
   "name": "001-C - Parque Renascer/Cidade Industrial",
+  "operator": "Cons\u00f3rcio Norte",
   "type": "route",
   "members": {
     "ways": [
@@ -10523,6 +10541,7 @@
   },
   "data_type": "relation",
   "name": "001 - Hon\u00f3rio Bicalho via Santa Rita",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -10636,6 +10655,7 @@
   },
   "data_type": "relation",
   "name": "002 - Circular Vila Oper\u00e1ria/Cristais/BNH",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -10712,6 +10732,7 @@
   },
   "data_type": "relation",
   "name": "003 - Alto do Gaia via Bela Fama",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -10789,6 +10810,7 @@
   },
   "data_type": "relation",
   "name": "005 - Jos\u00e9 de Almeida via Barreira",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -10862,6 +10884,7 @@
   },
   "data_type": "relation",
   "name": "006 - Mingu/Mina d'\u00c1gua",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -10960,6 +10983,7 @@
   },
   "data_type": "relation",
   "name": "007 - Avenida",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11069,6 +11093,7 @@
   },
   "data_type": "relation",
   "name": "009 - Circular 01",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11222,6 +11247,7 @@
   },
   "data_type": "relation",
   "name": "011 - Alphaville (ida)",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11318,6 +11344,7 @@
   },
   "data_type": "relation",
   "name": "011 - Alphaville (volta)",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11405,6 +11432,7 @@
   },
   "data_type": "relation",
   "name": "011 - Alphaville",
+  "operator": "ViaOuro",
   "type": "route_master"
 }
 {
@@ -11418,6 +11446,7 @@
   },
   "data_type": "relation",
   "name": "012 - FIAT via Biocor",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11762,6 +11791,7 @@
   },
   "data_type": "relation",
   "name": "013 - Galo",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11832,6 +11862,7 @@
   },
   "data_type": "relation",
   "name": "014 - Jardim Canad\u00e1/Retiro das Pedras",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -11895,6 +11926,7 @@
   },
   "data_type": "relation",
   "name": "015 - Cariocas/Boa Vista",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -12007,6 +12039,7 @@
   },
   "data_type": "relation",
   "name": "017 - Circular Centro",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -12059,6 +12092,7 @@
   },
   "data_type": "relation",
   "name": "018 - S\u00e3o Sebasti\u00e3o das \u00c1guas Claras via Jardim Petr\u00f3polis",
+  "operator": "ViaOuro",
   "type": "route",
   "members": {
     "ways": [
@@ -12171,6 +12205,7 @@
   },
   "data_type": "relation",
   "name": "2100 - Suely via Lagoinha",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -12299,6 +12334,7 @@
   },
   "data_type": "relation",
   "name": "2101 - Maria Helena via Cruzeiro",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -12443,6 +12479,7 @@
   },
   "data_type": "relation",
   "name": "2102 - Atalaia via Lagoinha",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -12592,6 +12629,7 @@
   },
   "data_type": "relation",
   "name": "2420 - Menezes/Nova Pampulha via Lagoinha",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -12798,6 +12836,7 @@
   },
   "data_type": "relation",
   "name": "3302-A - Nova Pampulha via Itamarati (Hospitais)",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route",
   "members": {
     "ways": [
@@ -13124,6 +13163,7 @@
   },
   "data_type": "relation",
   "name": "3302-A - Nova Pampulha via Itamarati (Rua Petr\u00f3polis)",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route",
   "members": {
     "ways": [
@@ -13341,6 +13381,7 @@
   },
   "data_type": "relation",
   "name": "4100 - Nova Pampulha via K\u00e1tia",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -13488,6 +13529,7 @@
   },
   "data_type": "relation",
   "name": "4101 - Nova Pampulha via C\u00e9u Azul",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -13707,6 +13749,7 @@
   },
   "data_type": "relation",
   "name": "4200 - Rosimeire/Menezes via C\u00e9u Azul (ida)",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -13805,6 +13848,7 @@
   },
   "data_type": "relation",
   "name": "4200 - Rosimeire/Menezes via C\u00e9u Azul (volta)",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route",
   "members": {
     "ways": [
@@ -13898,6 +13942,7 @@
   },
   "data_type": "relation",
   "name": "3302-A - Nova Pampulha via Itamarati",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route_master"
 }
 {
@@ -13911,6 +13956,7 @@
   },
   "data_type": "relation",
   "name": "4108 - Pedro II/Mangabeiras via Av. Afonso Pena",
+  "operator": "Cons\u00f3rcio Pampulha",
   "type": "route_master"
 }
 {
@@ -13924,6 +13970,7 @@
   },
   "data_type": "relation",
   "name": "4200 - Rosimeire/Menezes via C\u00e9u Azul",
+  "operator": "Justin\u00f3polis Transportes",
   "type": "route_master"
 }
 {
@@ -13937,6 +13984,7 @@
   },
   "data_type": "relation",
   "name": "113-1 - Padre Miguel/Barreiro do Amaral (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14055,6 +14103,7 @@
   },
   "data_type": "relation",
   "name": "113-1 - Padre Miguel/Barreiro do Amaral (volta)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14299,6 +14348,7 @@
   },
   "data_type": "relation",
   "name": "213 - Bonanza/S\u00e3o Cosme",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14506,6 +14556,7 @@
   },
   "data_type": "relation",
   "name": "313 - Bom Destino/Pinh\u00f5es (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14590,6 +14641,7 @@
   },
   "data_type": "relation",
   "name": "313 - Bom Destino/Pinh\u00f5es (volta)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14675,6 +14727,7 @@
   },
   "data_type": "relation",
   "name": "113-1 - Padre Miguel/Barreiro do Amaral",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -14688,6 +14741,7 @@
   },
   "data_type": "relation",
   "name": "313 - Bom Destino/Pinh\u00f5es",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -14701,6 +14755,7 @@
   },
   "data_type": "relation",
   "name": "413-1 - Bicas/Bonanza via Morada do Rio (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14775,6 +14830,7 @@
   },
   "data_type": "relation",
   "name": "413-1 - Bicas/Bonanza via Morada do Rio (volta)",
+  "operator": "Expresso Santa Luzia",
   "members": {
     "ways": [
       253129005,
@@ -14859,6 +14915,7 @@
   },
   "data_type": "relation",
   "name": "413-3 - Bicas/V\u00e1rzea via Morada do Rio (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -14935,6 +14992,7 @@
   },
   "data_type": "relation",
   "name": "413-3 - Bicas/V\u00e1rzea via Morada do Rio (volta)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -15022,6 +15080,7 @@
   },
   "data_type": "relation",
   "name": "413 - Bicas/Bonanza via Morada do Rio",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -15035,6 +15094,7 @@
   },
   "data_type": "relation",
   "name": "513-1 - C\u00f3rrego das Cal\u00e7adas/S\u00e3o Jos\u00e9",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -15225,6 +15285,7 @@
   },
   "data_type": "relation",
   "name": "513-3 - Bom Destino via C\u00f3rrego das Cal\u00e7adas/S\u00e3o Benedito",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -15488,6 +15549,7 @@
   },
   "data_type": "relation",
   "name": "613-B - Vale das Ac\u00e1cias/Zero Hora via Duquesa II",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -15625,6 +15687,7 @@
   },
   "data_type": "relation",
   "name": "713-1 - Industrial Americano/Londrina via Belo Vale",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -15980,6 +16043,7 @@
   },
   "data_type": "relation",
   "name": "813-1 - Industrial Americano/Cristina via Belo Vale",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -16186,6 +16250,7 @@
   },
   "data_type": "relation",
   "name": "813-3 - Kennedy/Palmital",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -16380,6 +16445,7 @@
   },
   "data_type": "relation",
   "name": "513 - C\u00f3rrego das Cal\u00e7adas/S\u00e3o Jos\u00e9",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -16393,6 +16459,7 @@
   },
   "data_type": "relation",
   "name": "713 - Industrial Americano/Londrina via Belo Vale",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -16406,6 +16473,7 @@
   },
   "data_type": "relation",
   "name": "813 - Industrial Americano/Cristina",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -16419,6 +16487,7 @@
   },
   "data_type": "relation",
   "name": "913-1 - Bicas/Engenho via Pinh\u00f5es (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -16563,6 +16632,7 @@
   },
   "data_type": "relation",
   "name": "913-3 - Zero Hora/Engenho via Pinh\u00f5es (ida)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -16678,6 +16748,7 @@
   },
   "data_type": "relation",
   "name": "913-3 - Zero Hora/Engenho via Pinh\u00f5es (volta)",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -16789,6 +16860,7 @@
   },
   "data_type": "relation",
   "name": "913 - Bicas/Engenho via Pinh\u00f5es",
+  "operator": "Expresso Santa Luzia",
   "type": "route_master"
 }
 {
@@ -16802,6 +16874,7 @@
   },
   "data_type": "relation",
   "name": "SC02 - Circular Santa Luzia",
+  "operator": "Expresso Santa Luzia",
   "type": "route",
   "members": {
     "ways": [
@@ -19147,6 +19220,7 @@
     "uid": "1631826"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Conjunto S\u00e3o Francisco de Assis",
   "type": "boundary",
   "members": {
@@ -19168,6 +19242,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Conjunto Taquaril",
   "type": "boundary",
   "members": {
@@ -24658,6 +24733,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Aeroporto",
   "type": "boundary",
   "members": {
@@ -24679,6 +24755,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Alta Tens\u00e3o 1\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -24719,6 +24796,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Alto das Antenas",
   "type": "boundary",
   "members": {
@@ -24779,6 +24857,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Andiroba",
   "type": "boundary",
   "members": {
@@ -24838,6 +24917,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Ant\u00f4nio Ribeiro de Abreu 1\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -24856,6 +24936,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Ant\u00f4nio Ribeiro de Abreu 2\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -24877,6 +24958,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Ant\u00f4nio Ribeiro de Abreu 3\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -25118,6 +25200,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Bernadete",
   "type": "boundary",
   "members": {
@@ -25214,6 +25297,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Boa Uni\u00e3o 2\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -25254,6 +25338,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila CEMIG",
   "type": "boundary",
   "members": {
@@ -25996,6 +26081,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Jardim S\u00e3o Jos\u00e9",
   "type": "boundary",
   "members": {
@@ -26364,6 +26450,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Minasl\u00e2ndia",
   "type": "boundary",
   "members": {
@@ -26890,6 +26977,7 @@
     "uid": "1631826"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Paquet\u00e1",
   "type": "boundary",
   "members": {
@@ -27073,6 +27161,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila 1\u00ba de Maio",
   "type": "boundary",
   "members": {
@@ -27438,6 +27527,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Suzana 1\u00aa Se\u00e7\u00e3o",
   "type": "boundary",
   "members": {
@@ -27696,6 +27786,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila S\u00e3o Paulo",
   "type": "boundary",
   "members": {
@@ -29370,6 +29461,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Venda Nova",
+  "operator": "BHTrans",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -36673,6 +36765,7 @@
     "street": "Avenida Marechal Esperidi\u00e3o Rosas"
   },
   "amenity": "school",
+  "landuse": "military",
   "name": "Col\u00e9gio Militar de Belo Horizonte",
   "type": "multipolygon",
   "contact": {
@@ -36702,6 +36795,7 @@
     "street": "Avenida Marechal Esperidi\u00e3o Rosas"
   },
   "amenity": "school",
+  "landuse": "military",
   "name": "Centro de Prepara\u00e7\u00e3o de Oficiais da Reserva",
   "type": "multipolygon",
   "contact": {
@@ -36728,6 +36822,7 @@
   },
   "data_type": "relation",
   "name": "Departamento de Planejamento F\u00edsico e Projetos e Departamento de Manuten\u00e7\u00e3o e Opera\u00e7\u00e3o da Infraestrutura",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -36748,6 +36843,7 @@
   "data_type": "relation",
   "amenity": "university",
   "name": "Campus Pampulha da Universidade Federal de Minas Gerais",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "https://www.ufmg.br"
@@ -36780,6 +36876,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "military",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -36800,6 +36897,7 @@
     "uid": "2762547"
   },
   "data_type": "relation",
+  "landuse": "military",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -36820,6 +36918,7 @@
     "uid": "582148"
   },
   "data_type": "relation",
+  "landuse": "forest",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -38100,6 +38199,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila S\u00e3o Mateus",
   "type": "multipolygon",
   "members": {
@@ -38167,6 +38267,7 @@
     "street_type": "Avenida",
     "street": "Avenida Presidente Ant\u00f4nio Carlos"
   },
+  "landuse": "retail",
   "name": "Grande Minas",
   "contact": {
     "phone": "+55 31 3507-6700"
@@ -38192,6 +38293,7 @@
   },
   "data_type": "relation",
   "amenity": "rental",
+  "landuse": "commercial",
   "name": "Orguel",
   "type": "multipolygon",
   "members": {
@@ -38528,6 +38630,7 @@
   "data_type": "relation",
   "leisure": "nature_reserve",
   "name": "Parque Nacional da Serra do Gandarela",
+  "operator": "Instituto Chico Mendes de Conserva\u00e7\u00e3o da Biodiversidade",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -38704,6 +38807,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "garages",
   "name": "Urca Auto \u00d4nibus",
   "type": "multipolygon",
   "members": {
@@ -38925,6 +39029,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "garages",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -38945,6 +39050,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -38964,6 +39070,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -38983,6 +39090,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39023,6 +39131,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39043,6 +39152,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39063,6 +39173,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39083,6 +39194,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39103,6 +39215,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39123,6 +39236,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39143,6 +39257,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39163,6 +39278,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39183,6 +39299,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39203,6 +39320,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39223,6 +39341,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39243,6 +39362,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39274,6 +39394,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39295,6 +39416,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39316,6 +39438,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39337,6 +39460,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39358,6 +39482,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39379,6 +39504,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39400,6 +39526,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39421,6 +39548,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39442,6 +39570,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39464,6 +39593,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39486,6 +39616,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39612,6 +39743,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Campo do Acara\u00ed",
+  "operator": "Acara\u00ed Esporte Clube",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39632,6 +39764,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Campo do Dan\u00fabio",
+  "operator": "Sociedade Esportiva Dan\u00fabio",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39653,6 +39786,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Campo do Palmeirense",
+  "operator": "Palmeirense Futebol Clube",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39673,6 +39807,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Est\u00e1dio J\u00falio C\u00e9sar Vasconcelos",
+  "operator": "Remo Atl\u00e9tico Clube",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39732,6 +39867,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Campo do Cachoeirinha",
+  "operator": "Associa\u00e7\u00e3o Atl\u00e9tica Cachoeirinha",
   "sport": [
     "soccer"
   ],
@@ -39755,6 +39891,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Campo do Vista Alegre",
+  "operator": "Vista Alegre Futebol Clube",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -39778,6 +39915,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Est\u00e1dio Janu\u00e1rio Laurindo Carneiro",
+  "operator": "Santa Cruz Futebol Clube",
   "sport": [
     "soccer"
   ],
@@ -40428,6 +40566,7 @@
   },
   "data_type": "relation",
   "name": "83D - Esta\u00e7\u00e3o S\u00e3o Gabriel/Centro (direta)",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -40615,6 +40754,7 @@
   },
   "data_type": "relation",
   "name": "822 - Esta\u00e7\u00e3o Jos\u00e9 C\u00e2ndido da Silveira/Vila Maria",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -40765,6 +40905,7 @@
   },
   "data_type": "relation",
   "name": "821 - Esta\u00e7\u00e3o Jos\u00e9 C\u00e2ndido da Silveira/Goi\u00e2nia",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -40884,6 +41025,7 @@
   },
   "data_type": "relation",
   "name": "814 - Esta\u00e7\u00e3o S\u00e3o Gabriel/Jardim Vit\u00f3ria",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -40986,6 +41128,7 @@
   },
   "data_type": "relation",
   "name": "83P - Esta\u00e7\u00e3o S\u00e3o Gabriel/Centro (paradora)",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -41263,6 +41406,7 @@
     "uid": "2173970"
   },
   "data_type": "relation",
+  "landuse": "railway",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -41296,6 +41440,7 @@
     "street_type": "Avenida",
     "street": "Avenida Presidente Carlos Luz"
   },
+  "landuse": "commercial",
   "name": "Shopping Del Rey",
   "shop": "mall",
   "type": "multipolygon",
@@ -41460,6 +41605,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "garages",
   "name": "Via\u00e7\u00e3o Jardins",
   "type": "multipolygon",
   "members": {
@@ -41500,6 +41646,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "construction",
   "name": "Catedral Metropolitana de Belo Horizonte",
   "type": "multipolygon",
   "members": {
@@ -41521,6 +41668,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -41540,6 +41688,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -41631,6 +41780,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -41650,6 +41800,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -41733,6 +41884,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "recreation_ground",
   "name": "Associa\u00e7\u00e3o dos Trabalhadores da Codemig",
   "type": "multipolygon",
   "members": {
@@ -41789,6 +41941,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Castanheiras",
   "type": "multipolygon",
   "members": {
@@ -42919,6 +43072,7 @@
   },
   "data_type": "relation",
   "name": "Escola de Educa\u00e7\u00e3o F\u00edsica, Fisioterapia e Terapia Ocupacional",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44570,6 +44724,7 @@
     "street": "Avenida Geraldo Rocha",
     "suburb": "Bairro Portal Do Sol"
   },
+  "landuse": "residential",
   "name": "Condom\u00ednio Bosque da Lagoa",
   "type": "multipolygon",
   "contact": {
@@ -44738,6 +44893,7 @@
   },
   "data_type": "relation",
   "amenity": "bus_station",
+  "landuse": "construction",
   "name": "Terminal S\u00e3o Benedito",
   "type": "multipolygon",
   "members": {
@@ -44757,7 +44913,9 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Moradia Universit\u00e1ria Ouro Preto II",
+  "operator": "Funda\u00e7\u00e3o Universit\u00e1ria Mendes Pimentel",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44778,7 +44936,9 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "construction",
   "name": "Moradia Universit\u00e1ria Ouro Preto III",
+  "operator": "Funda\u00e7\u00e3o Universit\u00e1ria Mendes Pimentel",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44823,6 +44983,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "commercial",
   "name": "Shopping Fleming",
   "type": "multipolygon",
   "members": {
@@ -44850,6 +45011,7 @@
     "street_type": "Avenida",
     "street": "Avenida Fleming"
   },
+  "landuse": "commercial",
   "name": "Vila Rica",
   "shop": "mall",
   "type": "multipolygon",
@@ -44873,6 +45035,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "commercial",
   "shop": "florist",
   "type": "multipolygon",
   "members": {
@@ -44917,6 +45080,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44935,6 +45099,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44954,6 +45119,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44973,6 +45139,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -44992,6 +45159,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45011,6 +45179,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45031,6 +45200,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45051,6 +45221,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45071,6 +45242,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45092,6 +45264,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45113,6 +45286,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45134,6 +45308,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45155,6 +45330,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45176,6 +45352,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45197,6 +45374,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45218,6 +45396,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45239,6 +45418,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45576,6 +45756,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "industrial",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45594,6 +45775,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "military",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -45727,6 +45909,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Morro Vermelho",
   "type": "multipolygon",
   "members": {
@@ -46684,6 +46867,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "garages",
   "name": "Laguna Auto \u00d4nibus",
   "type": "multipolygon",
   "members": {
@@ -49951,6 +50135,7 @@
   },
   "data_type": "relation",
   "name": "Central do Brasil",
+  "operator": "FCA",
   "type": "route",
   "members": {
     "ways": [
@@ -50020,6 +50205,7 @@
     "uid": "4065070"
   },
   "data_type": "relation",
+  "landuse": "quarry",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -50061,7 +50247,9 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "commercial",
   "name": "Correios - Centro de Triagem de Cartas e Encomendas",
+  "operator": "Empresa de Correios e Tel\u00e9grafos",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -50106,6 +50294,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "industrial",
   "name": "Stola do Brasil",
   "type": "multipolygon",
   "members": {
@@ -50131,6 +50320,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "grass",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -50254,6 +50444,7 @@
   },
   "data_type": "relation",
   "name": "5503-B - Goi\u00e2nia B/Centro",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -50494,6 +50685,7 @@
   },
   "data_type": "relation",
   "name": "5503-A - Goi\u00e2nia A/Centro",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -50650,6 +50842,7 @@
   },
   "data_type": "relation",
   "name": "85 - Esta\u00e7\u00e3o S\u00e3o Gabriel/Centro via Floresta",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -50841,6 +51034,7 @@
   },
   "data_type": "relation",
   "name": "82 - Esta\u00e7\u00e3o S\u00e3o Gabriel/Savassi via Hospitais",
+  "operator": "Cons\u00f3rcio BHLeste",
   "type": "route",
   "members": {
     "ways": [
@@ -50977,6 +51171,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "retail",
   "name": "Epa Supermercados",
   "shop": "supermarket",
   "type": "multipolygon",
@@ -50999,6 +51194,7 @@
   "data_type": "relation",
   "amenity": "school",
   "name": "Escola Estadual Sagrada Familia",
+  "operator": "Secretaria de Estado de Educa\u00e7\u00e3o de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51017,6 +51213,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "garages",
   "name": "Viasul Transportes Coletivos",
   "type": "multipolygon",
   "members": {
@@ -51040,6 +51237,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o IAPI - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51198,6 +51396,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Hospital Odilon Behrens - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51220,6 +51419,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o S\u00e3o Judas Tadeu - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51318,6 +51518,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Sagrada Fam\u00edlia - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51360,6 +51561,7 @@
   },
   "data_type": "relation",
   "name": "Aeroporto de Belo Horizonte/Pampulha - MG - Carlos Drummond de Andrade",
+  "operator": "INFRAERO",
   "type": "multipolygon",
   "contact": {
     "site": "http://www4.infraero.gov.br/aeroportos/aeroporto-de-belo-horizonte-pampulha-carlos-drummond-de-andrade/"
@@ -51392,6 +51594,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "military",
   "name": "CIAAR",
   "type": "multipolygon",
   "members": {
@@ -51415,6 +51618,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Aparecida - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51437,6 +51641,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Cidade Nova - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51459,6 +51664,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Col\u00e9gio Militar - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51481,6 +51687,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Feira dos Produtores - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51503,6 +51710,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Feira dos Produtores - MOVE Metropolitano",
+  "operator": "SETOP",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51525,6 +51733,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Ipiranga - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51547,6 +51756,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Liberdade - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51569,6 +51779,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Minas Shopping - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51591,6 +51802,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Minas Shopping - MOVE Metropolitano",
+  "operator": "SETOP",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51613,6 +51825,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Mineir\u00e3o - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51635,6 +51848,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Ouro Minas - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51657,6 +51871,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Ouro Minas - MOVE Metropolitano",
+  "operator": "SETOP",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51679,6 +51894,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Santa Rosa - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51701,6 +51917,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o S\u00e3o Francisco - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -51745,6 +51962,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Uni\u00e3o - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52587,6 +52805,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Cachoeirinha - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52609,6 +52828,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Hospital Belo Horizonte - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52631,6 +52851,7 @@
   "data_type": "relation",
   "amenity": "bus_station",
   "name": "Esta\u00e7\u00e3o Oper\u00e1rios - MOVE BH",
+  "operator": "BHTrans",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52870,6 +53091,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Condom\u00ednio Fazenda da Serra",
   "type": "multipolygon",
   "members": {
@@ -52904,6 +53126,7 @@
     "street_type": "Rua",
     "street": "Rua Gustavo Ladeira"
   },
+  "landuse": "residential",
   "name": "Condom\u00ednio Residencial Gran Felicit\u00e1 Castelo",
   "type": "multipolygon",
   "members": {
@@ -52949,6 +53172,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "commercial",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52967,6 +53191,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "meadow",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -52986,6 +53211,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -53231,6 +53457,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "industrial",
   "name": "Vallourec & Sumitomo (ex-Mannesmann)",
   "type": "multipolygon",
   "members": {
@@ -53254,6 +53481,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "forest",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -53273,6 +53501,7 @@
   },
   "data_type": "relation",
   "name": "CEMIG - Subesta\u00e7\u00e3o Barreiro",
+  "operator": "CEMIG",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -53334,6 +53563,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "forest",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -53354,6 +53584,7 @@
   "data_type": "relation",
   "leisure": "stadium",
   "name": "Est\u00e1dio Municipal Castor Cifuentes",
+  "operator": "Pref. de Nova Lima",
   "sport": [
     "soccer"
   ],
@@ -53552,6 +53783,7 @@
   },
   "data_type": "relation",
   "name": "01 - Sider\u00fargica/Campo de Santo Ant\u00f4nio (ida)",
+  "operator": "Vinscol",
   "type": "route",
   "members": {
     "ways": [
@@ -53609,6 +53841,7 @@
   },
   "data_type": "relation",
   "name": "01 - Sider\u00fargica/Campo de Santo Ant\u00f4nio (volta)",
+  "operator": "Vinscol",
   "type": "route",
   "members": {
     "ways": [
@@ -53667,6 +53900,7 @@
   },
   "data_type": "relation",
   "name": "01 - Sider\u00fargica/Campo de Santo Ant\u00f4nio",
+  "operator": "Vinscol",
   "type": "route_master"
 }
 {
@@ -54104,6 +54338,7 @@
   "data_type": "relation",
   "amenity": "college",
   "name": "Instituto de Ci\u00eancias Biol\u00f3gicas",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "http://www.icb.ufmg.br/"
@@ -54139,6 +54374,7 @@
   "data_type": "relation",
   "amenity": "parking",
   "name": "Estacionamento UFMG",
+  "operator": "UFMG",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -54157,6 +54393,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "construction",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -54321,6 +54558,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila PTO",
   "type": "multipolygon",
   "members": {
@@ -54794,6 +55032,7 @@
   },
   "data_type": "relation",
   "name": "MARIA GORETTI/NOVA GRANADA",
+  "operator": "CONSORCIO DEZ",
   "type": "route",
   "members": {
     "ways": [
@@ -54836,6 +55075,7 @@
   },
   "data_type": "relation",
   "name": "Departamento de Ci\u00eancias da Computa\u00e7\u00e3o",
+  "operator": "Instituto de Ci\u00eancias Exatas",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -54858,6 +55098,7 @@
   },
   "data_type": "relation",
   "name": "Departamento de F\u00edsica",
+  "operator": "Instituto de Ci\u00eancias Exatas",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -54910,6 +55151,7 @@
   "data_type": "relation",
   "amenity": "university",
   "name": "Faculdade de Ci\u00eancias Econ\u00f4micas",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "http://web.face.ufmg.br/face/portal/"
@@ -54937,6 +55179,7 @@
   "data_type": "relation",
   "amenity": "university",
   "name": "Instituto de Geoci\u00eancias",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "contact": {
     "site": "http://www.igc.ufmg.br/"
@@ -54960,6 +55203,7 @@
   "data_type": "relation",
   "amenity": "university",
   "name": "Reitoria",
+  "operator": "Universidade Federal de Minas Gerais",
   "type": "multipolygon",
   "members": {
     "ways": [
@@ -60307,6 +60551,7 @@
   },
   "data_type": "relation",
   "name": "51-05 - Esta\u00e7\u00e3o Pampulha/Centro/Hospitais (direta tarde)",
+  "operator": "BHTrans",
   "type": "route",
   "members": {
     "ways": [
@@ -60426,6 +60671,7 @@
   },
   "data_type": "relation",
   "name": "51-03 - Esta\u00e7\u00e3o Pampulha/Hospitais/Centro (direta manh\u00e3)",
+  "operator": "BHTrans",
   "type": "route",
   "members": {
     "ways": [
@@ -60708,6 +60954,7 @@
   },
   "data_type": "relation",
   "name": "51-01 - Esta\u00e7\u00e3o Pampulha/Centro/Hospitais (paradora)",
+  "operator": "BHTrans",
   "type": "route",
   "members": {
     "ways": [
@@ -60842,6 +61089,7 @@
   },
   "data_type": "relation",
   "name": "51 - Esta\u00e7\u00e3o Pampulha/Centro/Hospitais",
+  "operator": "BHTrans",
   "type": "route_master"
 }
 {
@@ -60911,6 +61159,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Carij\u00f3s",
+  "operator": "BHTrans",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -60937,6 +61186,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Tupinamb\u00e1s",
+  "operator": "SETOP",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -60963,6 +61213,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Esp\u00edrito Santo",
+  "operator": "SETOP",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -60989,6 +61240,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Rio de Janeiro",
+  "operator": "BHTrans",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -61015,6 +61267,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o S\u00e3o Paulo",
+  "operator": "BHTrans",
   "type": "public_transport",
   "members": {
     "nodes": [
@@ -61041,6 +61294,7 @@
   },
   "data_type": "relation",
   "name": "50 - Esta\u00e7\u00e3o Pampulha/Centro (direta)",
+  "operator": "BHTrans",
   "type": "route",
   "members": {
     "ways": [
@@ -61132,6 +61386,7 @@
   },
   "data_type": "relation",
   "name": "Esta\u00e7\u00e3o Pampulha",
+  "operator": "BHTrans",
   "type": "public_transport",
   "members": {
     "ways": [
@@ -61167,6 +61422,7 @@
     "uid": "6680249"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Vila Nova Para\u00edso",
   "type": "multipolygon",
   "members": {
@@ -61187,6 +61443,7 @@
     "uid": "6680249"
   },
   "data_type": "relation",
+  "landuse": "residential",
   "name": "Ocupa\u00e7\u00e3o Novo Para\u00edso",
   "type": "multipolygon",
   "members": {
@@ -61654,6 +61911,7 @@
     "uid": "397143"
   },
   "data_type": "relation",
+  "landuse": "construction",
   "name": "Hospital Unimed - Expans\u00e3o",
   "type": "multipolygon",
   "members": {
@@ -62234,6 +62492,7 @@
     "uid": "2336678"
   },
   "data_type": "relation",
+  "landuse": "recreation_ground",
   "leisure": "park",
   "name": "Parque Municipal Am\u00e9rico Ren\u00ea Giannetti",
   "type": "multipolygon",
