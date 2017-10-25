@@ -46,9 +46,8 @@ def convert_address_tag_element(element, address_node):
     """
     if audit_address.is_street_element(element):
         street_type, street_name = audit_address.process_steet_type_and_name(element.attrib['v'])
-        if street_type:
+        if street_type and street_type in audit_address.VALID_STREET_TYPE:
             address_node["street_type"] = street_type
-        if street_name:
             address_node["street"] = street_name
     elif audit_address.is_city_element(element):
         address_node["city"] = audit_address.city_name_cleaning(element.attrib['v'])
@@ -135,12 +134,12 @@ def convert_tag_element(element, node):
                 node["address"] = {}
             node["address"] = convert_address_tag_element(tag_element, node["address"])
         #Convert contact data
-        if tag_element.attrib['k'] in audit_contact.VALID_CONTACT_TAG:
+        elif tag_element.attrib['k'] in audit_contact.VALID_CONTACT_TAG:
             if "contact" not in node:
                 node["contact"] = {}
             node["contact"] = convert_contact_tag_element(tag_element, node["contact"])
         #Convert other tags
-        if tag_element.attrib['k'] in KEYS_TO_CONVERT:
+        elif tag_element.attrib['k'] in KEYS_TO_CONVERT:
             if (tag_element.attrib['k'].startswith("sport")):
                 if "sport" not in node:
                     node["sport"] = [] 

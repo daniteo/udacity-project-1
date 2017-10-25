@@ -100,7 +100,7 @@ def process_steet_type_and_name(street_name):
     correcting wrong data
     """
     street_name = street_name.title()
-    street_type = ""
+    street_type = None
     match = STREET_TYPE_RE.search(street_name)
     if match:
         street_type = match.group("type")
